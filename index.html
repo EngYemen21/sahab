@@ -3,835 +3,2219 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#021b22" />
-  <meta name="description" content="تدفق — منصة تشغيل محادثات العملاء والمبيعات بالذكاء والأتمتة للشركات السعودية." />
-  <title>تدفق | منصة عمليات العملاء الذكية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>تدفق | منصة عمليات العملاء الذكية للشركات السعودية</title>
+  <meta name="description" content="تدفق — منصة تشغيل محادثات العملاء والمبيعات بالذكاء والأتمتة للشركات السعودية. صندوق محادثات موحّد، توزيع ذكي، متابعة لا تنسى، وتقارير لحظية." />
+  <!-- Facebook Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="تدفق | منصة عمليات العملاء الذكية للشركات السعودية" />
+  <meta property="og:description" content="تدفق — منصة تشغيل محادثات العملاء والمبيعات بالذكاء والأتمتة للشركات السعودية. صندوق محادثات موحّد، توزيع ذكي، متابعة لا تنسى، وتقارير لحظية." />
+  <meta property="og:image" content="/assets/images/logo-bg.jpeg" />
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تدفق | منصة عمليات العملاء الذكية للشركات السعودية" />
+  <meta name="twitter:description" content="تدفق — منصة تشغيل محادثات العملاء والمبيعات بالذكاء والأتمتة للشركات السعودية. صندوق محادثات موحّد، توزيع ذكي، متابعة لا تنسى، وتقارير لحظية." />
+  <meta name="twitter:image" content="/assets/images/logo-bg.jpeg" />
+  <!-- theme-color -->
+  <meta name="theme-color" content="#02252E" />
+
+  
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['TheYearofHandicrafts', 'system-ui', 'sans-serif'],
+            display: ['TheYearofHandicrafts', 'Almarai', 'system-ui', 'sans-serif'],
+            handicrafts: ['TheYearofHandicrafts', 'sans-serif'],
+          },
+          colors: {
+            // تدفق Identity
+            ink: {
+              DEFAULT: '#02252E',
+              50: '#E8F2F5',
+              100: '#D2E4E8',
+              700: '#0C3842',
+              800: '#07252B',
+              900: '#02252E',
+              950: '#011F26',
+            },
+            teal: {
+              DEFAULT: '#00A2B5',
+              50: '#E8F8FA',
+              100: '#D5F7F2',
+              200: '#CBF7F5',
+              300: '#00C9B6',
+              400: '#00BFC9',
+              500: '#00A2B5',
+              600: '#007A87',
+              700: '#00505A',
+              800: '#042127',
+              900: '#011F26',
+            },
+            cream: {
+              DEFAULT: '#F6F4ED',
+              50: '#FAFBFD',
+              100: '#F7F5EE',
+              200: '#F5F3ED',
+              300: '#EBE8DF',
+              400: '#DFE5DF',
+              500: '#D9D5CA',
+            },
+            gold: '#D4AF37',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.8s ease-out forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'float-slow': 'float 9s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+            'gradient-shift': 'gradientShift 8s ease infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+            'blink': 'blink 1s step-end infinite',
+            'scale-in': 'scaleIn 0.6s ease-out forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0) translateX(0)' },
+              '50%': { transform: 'translateY(-20px) translateX(10px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 30px rgba(0,162,181,0.3)' },
+              '50%': { boxShadow: '0 0 60px rgba(0,162,181,0.6)' },
+            },
+            bounceSubtle: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+            gradientShift: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+            blink: {
+              '0%, 50%': { opacity: '1' },
+              '51%, 100%': { opacity: '0' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.9)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
   <style>
-    :root{
-      --bg:#021b22;
-      --bg-soft:#07252b;
-      --card:#0e353f;
-      --card-2:#12424f;
-      --text:#fafbfd;
-      --muted:#8fa3a8;
-      --line:rgba(255,255,255,.10);
-      --green:#00c9b6;
-      --green-2:#00a2b5;
-      --cream:#e8f2f5;
-      --shadow:0 28px 70px rgba(0,30,38,.40);
-      --radius:28px;
-      --radius-sm:18px;
-      --container:1180px;
+    @font-face {
+      font-family: 'TheYearofHandicrafts';
+      src: url('assets/fonts/handicrafts/alfont_com_TheYearofHandicrafts-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TheYearofHandicrafts';
+      src: url('assets/fonts/handicrafts/alfont_com_TheYearofHandicrafts-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TheYearofHandicrafts';
+      src: url('assets/fonts/handicrafts/alfont_com_TheYearofHandicrafts-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TheYearofHandicrafts';
+      src: url('assets/fonts/handicrafts/alfont_TheYearofHandicrafts-Black.otf') format('opentype');
+      font-weight: 900;
+      font-style: normal;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:
-        radial-gradient(circle at 10% 3%, rgba(0,201,182,.13), transparent 28%),
-        radial-gradient(circle at 92% 18%, rgba(0,182,196,.09), transparent 25%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.75;
-      overflow-x:clip;
+    :root {
+      --tdq-ink: #02252E;
+      --tdq-primary: #00A2B5;
+      --tdq-primary-light: #00C9B6;
+      --tdq-cream: #F6F4ED;
+      --tdq-gold: #D4AF37;
     }
 
-    a{color:inherit;text-decoration:none}
-    button,input,textarea{font:inherit}
-    img{max-width:100%}
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Almarai', sans-serif; background: var(--tdq-cream); color: var(--tdq-ink); overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'TheYearofHandicrafts', 'Almarai', sans-serif; line-height: 1.3 !important; }
 
-    .container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
-    .section{padding:110px 0;position:relative}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:9px;
-      color:var(--green);font-size:.86rem;font-weight:700;
-      letter-spacing:.02em;margin-bottom:16px
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 32px rgba(2, 37, 46, 0.08);
     }
-    .eyebrow::before{
-      content:"";width:28px;height:1px;background:var(--green)
+    .glass-dark {
+      background: rgba(2, 37, 46, 0.55);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    h1,h2,h3,p{margin-top:0}
-    h1{font-size:clamp(3rem,6.2vw,5.8rem);line-height:1.16;letter-spacing:-.045em;margin-bottom:24px}
-    h2{font-size:clamp(2.15rem,4.6vw,4.2rem);line-height:1.12;letter-spacing:-.04em;margin-bottom:20px}
-    h3{font-size:1.4rem;line-height:1.35;margin-bottom:10px}
-    p{color:var(--muted)}
-    .highlight{color:var(--green);display:block;margin-top:12px}
-    .muted{color:var(--muted)}
-
-    .nav-wrap{
-      position:fixed;top:14px;left:0;right:0;z-index:1000;
-      pointer-events:none
-    }
-    nav{
-      pointer-events:auto;
-      width:min(1120px,calc(100% - 24px));margin:auto;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:10px 12px 10px 16px;gap:12px;
-      border:1px solid var(--line);
-      background:rgba(2,27,34,.86);
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      border-radius:999px;
-      box-shadow:0 10px 40px rgba(0,0,0,.25)
-    }
-    .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.3rem;min-width:0;flex-shrink:1}
-    .brand-mark{
-      width:40px;height:40px;border-radius:14px;
-      background:linear-gradient(135deg,var(--green),var(--green-2));
-      color:#062013;display:grid;place-items:center;font-weight:800;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)
-    }
-    .brand-logo{
-      height:42px;
-      max-width:128px;
-      width:auto;
-      display: block;
-      object-fit: contain;
-      flex-shrink:0;
-    }
-    .nav-links{display:flex;gap:26px;align-items:center;color:#d7dfda;font-size:.93rem}
-    .nav-links a{opacity:.82;transition:.25s}
-    .nav-links a:hover{opacity:1;color:var(--green)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      border:0;border-radius:999px;padding:14px 22px;font-weight:700;
-      transition:.25s;cursor:pointer
-    }
-    .btn-primary{background:var(--green);color:#011f26;box-shadow:0 12px 26px rgba(0,201,182,.16)}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,201,182,.24)}
-    .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.025)}
-    .btn-ghost:hover{border-color:rgba(0,201,182,.45);color:var(--green)}
-    .menu-btn{
-      display:none;background:none;border:0;color:white;font-size:1.5rem;
-      width:38px;height:38px;border-radius:50%;align-items:center;
-      justify-content:center;cursor:pointer;
-      border:1px solid var(--line);transition:.2s
-    }
-    .menu-btn:hover{background:rgba(0,201,182,.12);border-color:rgba(0,201,182,.3)}
-
-    .hero{padding:185px 0 70px;min-height:100vh;display:flex;align-items:center;overflow-x:clip}
-    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:72px;align-items:center}
-    .hero-copy .tag{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:8px 13px;border:1px solid rgba(0,201,182,.22);
-      background:rgba(0,201,182,.06);color:#cbf7f5;
-      border-radius:999px;font-size:.84rem;margin-bottom:22px
-    }
-    .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 7px rgba(0,201,182,.10)}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 42px}
-    .hero-trust{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:.9rem}
-    .avatars{display:flex}
-    .avatar{
-      width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-      border:2px solid var(--bg);margin-left:-8px;background:var(--card-2);
-      color:var(--green);font-size:.72rem;font-weight:700
+    .glass-mint {
+      background: rgba(213, 247, 242, 0.5);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(0, 162, 181, 0.18);
     }
 
-    .dashboard{
-      position:relative;padding:18px;border:1px solid var(--line);
-      background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));
-      border-radius:34px;box-shadow:var(--shadow);transform:rotate(-1.2deg)
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #00A2B5 0%, #00C9B6 50%, #007A87 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .dashboard::before{
-      content:"";position:absolute;inset:-70px -90px;z-index:-1;
-      background:radial-gradient(circle,rgba(0,201,182,.14),transparent 60%);
-      filter:blur(10px)
-    }
-    .dash-shell{background:#f6f4ed;color:#02252e;border-radius:24px;overflow:hidden;min-height:520px}
-    .dash-top{
-      height:62px;display:flex;align-items:center;justify-content:space-between;
-      padding:0 18px;border-bottom:1px solid #dfe6e1;background:#fff
-    }
-    .dotset{display:flex;gap:6px}
-    .dotset i{width:8px;height:8px;border-radius:50%;background:#b9c5bd}
-    .dash-body{display:grid;grid-template-columns:110px 1fr;height:458px}
-    .sidebar{background:var(--bg-soft);color:#dce9e0;padding:18px 12px}
-    .side-logo{width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;margin-bottom:28px}
-    .side-logo img{max-width:90%;max-height:90%;object-fit:contain}
-    .side-item{height:36px;border-radius:10px;margin-bottom:9px;background:rgba(255,255,255,.07)}
-    .side-item.active{background:rgba(0,201,182,.22)}
-    .content{padding:18px;background:#f5f3ed}
-    .mini-title{font-weight:700;margin-bottom:14px}
-    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .stat{
-      background:white;border:1px solid #d2e4e8;border-radius:14px;padding:12px;
-      box-shadow:0 8px 20px rgba(0,182,196,.06)
-    }
-    .stat b{display:block;font-size:1.35rem;color:#00505a}
-    .stat small{color:#6d7d75}
-    .inbox{margin-top:12px;background:white;border:1px solid #d2e4e8;border-radius:16px;padding:12px}
-    .message{
-      display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;
-      padding:11px 0;border-bottom:1px solid #eef1ef
-    }
-    .message:last-child{border-bottom:0}
-    .message .pic{width:34px;height:34px;border-radius:50%;background:#dfeae3;display:grid;place-items:center;font-size:.7rem}
-    .message b{font-size:.84rem;display:block;}
-    .message span{font-size:.7rem;color:#728078}
-    .badge{font-size:.65rem;background:#d5f7f2;color:#007a87;padding:4px 7px;border-radius:999px}
-    .float-card{
-      position:absolute;left:-54px;bottom:72px;width:190px;
-      background:#fff;color:#02252e;border-radius:18px;padding:14px;
-      box-shadow:0 18px 40px rgba(0,0,0,.22);transform:rotate(2.4deg)
-    }
-    .float-card strong{font-size:1.8rem;color:#00a2b5;display:block;line-height:1}
-    .float-card small{color:#738078}
-
-    .logos{padding:48px 0 0}
-    .logos p{text-align:center;font-size:.84rem;letter-spacing:.02em;margin-bottom:0}
-    .logo-strip{
-      display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px;
-      max-width:1100px;margin-inline:auto
-    }
-    .logo-chip{
-      min-height:65px;border:1px solid var(--line);border-radius:12px;
-      display:grid;place-items:center;text-align:center;padding:6px 12px;
-      color:#dfe8e2;background:rgba(255,255,255,.025);font-weight:700;
-      transition:border-color .25s,background .25s
-    }
-    .logo-chip:hover{
-      border-color:rgba(0,201,182,.30);
-      background:rgba(0,201,182,.04);
-    }
-    .logo-chip img{
-      max-width: 100%;
-      max-height: 38px;
-      object-fit: contain;
-      display: block;
-      transform: scale(1.65);
-      transform-origin: center;
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #E5C158 50%, #B8941F 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .problem-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
-    .problem-list{display:grid;gap:14px}
-    .problem-item{
-      border:1px solid var(--line);border-radius:22px;padding:22px;
-      background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
-      display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:start
-    }
-    .icon{
-      width:48px;height:48px;border-radius:16px;background:rgba(0,201,182,.10);
-      color:var(--green);display:grid;place-items:center;font-size:1.25rem
-    }
-    .problem-item p{margin:0;font-size:.94rem}
-
-    .compare-wrap{
-      background:var(--cream);color:var(--bg);border-radius:38px;padding:42px;
-      box-shadow:var(--shadow)
-    }
-    .compare-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:28px}
-    .compare-head p{color:#63726b;max-width:520px;margin-bottom:0}
-    .segmented{
-      display:inline-flex;padding:5px;background:#dfe5df;border-radius:999px
-    }
-    .segment{
-      border:0;border-radius:999px;padding:10px 18px;background:transparent;color:#43564c;cursor:pointer;font-weight:700
-    }
-    .segment.active{background:var(--bg);color:white}
-    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .state-card{border-radius:26px;padding:28px;min-height:340px}
-    .state-card.before{background:#ebe8df;border:1px solid #d9d5ca}
-    .state-card.after{background:var(--bg);color:#f7f5ee;border:1px solid var(--line)}
-    .state-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
-    .state-label span{font-weight:700}
-    .state-number{font-size:4rem;font-weight:700;line-height:1;letter-spacing:-.06em}
-    .state-card.after .state-number{color:var(--green)}
-    .state-card ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-    .state-card li{display:flex;align-items:flex-start;gap:9px;font-size:.95rem}
-    .state-card.before li{color:#536159}
-    .check{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;flex:0 0 20px;margin-top:3px}
-    .before .check{background:#ddd8cd;color:#7a817c}
-    .after .check{background:rgba(0,201,182,.14);color:var(--green)}
-
-    .results{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-    .result{
-      background:#fff;border:1px solid #e0e5e1;border-radius:20px;padding:22px
-    }
-    .result b{font-size:2.1rem;display:block;color:#00505a;line-height:1.1}
-    .result span{color:#66756d;font-size:.9rem}
-    .fineprint{color:#7f8c85;font-size:.76rem;margin:14px 2px 0}
-
-    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
-    .feature{
-      min-height:260px;border:1px solid var(--line);border-radius:26px;padding:26px;
-      background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
-      position:relative;overflow:hidden
-    }
-    .feature::after{
-      content:"";position:absolute;width:160px;height:160px;border-radius:50%;
-      background:rgba(0,201,182,.05);left:-70px;bottom:-80px
-    }
-    .feature .num{color:var(--green);font-size:.78rem;font-weight:700;margin-bottom:34px}
-    .feature p{font-size:.93rem}
-
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
-    .step{position:relative;padding-top:22px;border-top:1px solid var(--line)}
-    .step::before{
-      content:"";position:absolute;top:-5px;right:0;width:9px;height:9px;border-radius:50%;background:var(--green)
-    }
-    .step span{color:var(--green);font-weight:700;font-size:.82rem}
-    .step p{font-size:.9rem}
-
-    .testimonial{
-      padding:0 0 110px
-    }
-    .quote-card{
-      background:linear-gradient(135deg,#0c3842,#04232a);
-      border:1px solid rgba(0,201,182,.18);border-radius:36px;padding:52px;
-      display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:end
-    }
-    blockquote{font-size:clamp(1.5rem,3vw,2.7rem);line-height:1.45;margin:0;letter-spacing:-.025em}
-    .quote-author{border-right:1px solid var(--line);padding-right:26px}
-    .quote-author strong{display:block;font-size:1.05rem}
-    .quote-author span{color:var(--muted);font-size:.9rem}
-
-    .cta{padding:0 0 90px}
-    .cta-box{
-      background:var(--green);color:#011f26;border-radius:38px;padding:58px;
-      display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
-      position:relative;overflow:hidden
-    }
-    .cta-box::before{
-      content:"";position:absolute;width:330px;height:330px;border-radius:50%;
-      border:1px solid rgba(0,201,182,.12);left:-80px;top:-140px
-    }
-    .cta-box h2{margin-bottom:10px;color:#011f26}
-    .cta-box p{color:#124c56;margin:0;max-width:680px}
-    .cta-box .btn{background:#011f26;color:white;min-width:180px}
-
-    .contact-panel{
-      display:none;margin-top:24px;background:#092e37;border:1px solid rgba(255,255,255,.14);
-      border-radius:24px;padding:24px;color:white
-    }
-    .contact-panel.open{display:block;animation:fade .3s ease}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .field{display:grid;gap:7px}
-    .field.full{grid-column:1/-1}
-    label{font-size:.82rem;color:#bdd0c5}
-    input,textarea{
-      width:100%;border:1px solid rgba(255,255,255,.12);background:#042127;color:white;
-      border-radius:14px;padding:13px 14px;outline:none
-    }
-    input:focus,textarea:focus{border-color:var(--green)}
-    textarea{min-height:110px;resize:vertical}
-    .form-actions{display:flex;gap:10px;align-items:center;margin-top:14px}
-    .form-note{font-size:.76rem;color:#91a69b;margin:0}
-
-    footer{padding:34px 0 44px;border-top:1px solid var(--line)}
-    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .footer-links{display:flex;gap:18px;color:var(--muted);font-size:.85rem}
-    .copyright{color:#7f9187;font-size:.82rem}
-
-    .reveal{opacity:0;transform:translateY(22px);transition:.75s ease}
-    .reveal.visible{opacity:1;transform:none}
-    @keyframes fade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-
-    /* Mobile sticky CTA bar — hidden by default, shown at <= 680px */
-    .mobile-cta-bar{display:none}
-
-    @media(max-width:980px){
-      .nav-wrap{top:10px}
-      nav{
-        width:calc(100% - 24px);
-        padding:8px 10px 8px 14px;
-        position:relative;
-        gap:8px;
-      }
-      .brand{font-size:0}
-      .brand-logo{height:34px;max-width:88px}
-      .nav-links{
-        display:none;
-        position:fixed;
-        top:62px;
-        left:12px;
-        right:12px;
-        padding:10px;
-        background:rgba(2,27,34,.97);
-        border:1px solid var(--line);
-        border-radius:20px;
-        flex-direction:column;
-        gap:4px;
-        backdrop-filter:blur(20px);
-        -webkit-backdrop-filter:blur(20px);
-        box-shadow:0 16px 44px rgba(0,0,0,.4);
-        z-index:999;
-        max-height:calc(100vh - 78px);
-        overflow:auto;
-      }
-      .nav-links.open{display:flex}
-      .nav-links a{
-        padding:12px 14px;
-        border-radius:12px;
-        width:100%;
-        opacity:1;
-        font-size:.95rem;
-      }
-      .nav-links a:hover{background:rgba(0,201,182,.10);color:var(--green)}
-      .menu-btn{display:flex;flex-shrink:0}
-      nav>.btn{display:none}
-      .hero-grid,.problem-grid,.quote-card{grid-template-columns:1fr}
-      .hero{padding-top:120px}
-      .dashboard{max-width:680px;margin:auto}
-      .logo-strip{grid-template-columns:repeat(2,1fr);max-width:560px}
-      .features-grid{grid-template-columns:repeat(2,1fr)}
-      .steps{grid-template-columns:repeat(2,1fr)}
-      .quote-author{border-right:0;padding-right:0;border-top:1px solid var(--line);padding-top:22px}
+    /* Animated gradient background */
+    .animated-gradient {
+      background: linear-gradient(135deg, #F6F4ED 0%, #E8F2F5 25%, #D5F7F2 50%, #E8F2F5 75%, #F6F4ED 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
     }
 
-    /* ====== 768px breakpoint: tablet portrait (iPad) ====== */
-    @media(max-width:768px){
-      .section{padding:80px 0}
-      .hero{padding-top:130px}
-      .container{width:min(var(--container),calc(100% - 28px))}
-      /* Constrain dashboard & kill rotation/overflows that cause horizontal scroll */
-      .dashboard{
-        max-width:100%;
-        margin-inline:auto;
-        transform:rotate(-0.6deg); /* gentler rotation */
-      }
-      .dashboard::before{
-        inset:-30px -30px; /* tighten the glow so it doesn't overflow */
-      }
-      .cta-box::before{
-        width:220px;height:220px;left:-40px;top:-100px
-      }
-      .float-card{
-        left:-20px; /* closer to dashboard so it doesn't overflow on tablet */
-        width:170px
-      }
-      /* Hero spacing tightened */
-      .hero-grid{gap:48px}
-      .quote-card{grid-template-columns:1fr;gap:24px;align-items:start}
-      .quote-author{border-right:0;padding-right:0;border-top:1px solid var(--line);padding-top:22px}
+    /* Blob shapes */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    @media(max-width:680px){
-      .container{width:min(var(--container),calc(100% - 24px))}
-      .section{padding:70px 0}
-      .nav-wrap{top:8px}
-      nav{width:calc(100% - 20px);padding:7px 8px;gap:7px}
-      .brand-logo{height:32px;max-width:78px}
-      .menu-btn{width:36px;height:36px;font-size:1.35rem}
-      .nav-links{left:10px;right:10px;top:58px;max-height:calc(100vh - 74px)}
-      h1{font-size:clamp(2.35rem,11vw,2.6rem);letter-spacing:-.04em;line-height:1.06}
-      h2{font-size:2rem}
-      h3{font-size:1.2rem}
-      .hero{min-height:100svh;display:flex;align-items:center;padding-top:116px;padding-bottom:64px;overflow-x:clip}
-      .hero-grid{gap:44px;align-items:center}
-      .hero-copy{text-align:center}
-      .hero-copy .tag{margin-inline:auto}
-      .lead{margin-inline:auto}
-      .hero-actions{margin-inline:auto}
-      .hero-trust{justify-content:center;align-items:center;flex-wrap:wrap;margin-inline:auto}
-      .lead{font-size:1rem}
-      .hero-actions{flex-direction:column;gap:10px}
-      .hero-actions .btn{width:100%;justify-content:center}
-      /* === Dashboard: shrink slightly so it fits the mobile viewport === */
-      .dashboard{
-        max-width:100%;
-        margin-inline:auto;
-        transform:rotate(-0.4deg);  /* very gentle rotation, no overflow */
-        padding:14px;
-        border-radius:26px
-      }
-      .dashboard::before{
-        inset:-20px -20px  /* tight glow that stays inside the viewport */
-      }
-      .dash-body{grid-template-columns:68px 1fr}
-      .sidebar{padding:12px 8px}
-      .stats-row{grid-template-columns:1fr 1fr}
-      .dash-shell{min-height:560px}
-      .dash-body{height:498px}
-      .float-card{display:none}
-      .logo-strip{grid-template-columns:repeat(2,1fr);max-width:100%;gap:10px}
-      .logo-chip{min-height:60px;padding:6px 10px;border-radius:10px}
-      .logo-chip img{max-height:35px}
-      .compare-wrap{padding:22px;border-radius:24px}
-      .compare-head{align-items:start;flex-direction:column}
-      .compare-grid,.results,.features-grid,.steps{grid-template-columns:1fr}
-      .state-card{min-height:auto}
-      .quote-card,.cta-box{padding:28px 22px;border-radius:24px}
-      .cta-box{grid-template-columns:1fr}
-      .cta-box .btn{width:100%}
-      .cta-box::before{width:180px;height:180px;left:-30px;top:-80px}  /* shrink decorative circle */
-      .form-grid{grid-template-columns:1fr}
-      .field.full{grid-column:auto}
-      .footer-row{align-items:flex-start;flex-direction:column;gap:14px}
-      .footer-links{flex-wrap:wrap;gap:12px}
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
 
-      /* === Mobile sticky CTA bar === */
-      .mobile-cta-bar{
-        position:fixed;
-        bottom:0;left:0;right:0;
-        z-index:998;
-        padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-        background:rgba(2,27,34,.94);
-        backdrop-filter:blur(18px);
-        -webkit-backdrop-filter:blur(18px);
-        border-top:1px solid var(--line);
-        box-shadow:0 -8px 24px rgba(0,0,0,.35);
-        display:flex;gap:10px;align-items:center
-      }
-      .mobile-cta-bar .btn{
-        flex:1;width:100%;padding:13px 14px;font-size:.95rem
-      }
-      .mobile-cta-bar .btn-ghost{
-        flex:0 0 auto;width:auto;padding:13px 16px
-      }
-      /* leave room at the bottom of the page so the last section isn't covered */
-      .cta{padding-bottom:calc(90px + env(safe-area-inset-bottom) + 64px)}
-      footer{padding-bottom:calc(44px + env(safe-area-inset-bottom) + 64px)}
+    /* Shimmer for badges */
+    .shimmer-badge {
+      background: linear-gradient(90deg, rgba(0,162,181,0.1) 0%, rgba(0,201,182,0.3) 50%, rgba(0,162,181,0.1) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s linear infinite;
     }
 
-    @media(max-width:400px){
-      .nav-wrap{top:7px}
-      nav{width:calc(100% - 16px);padding:6px 7px;gap:6px}
-      .brand-logo{height:30px;max-width:70px}
-      .menu-btn{width:34px;height:34px;font-size:1.25rem}
-      .nav-links{left:8px;right:8px;top:56px;max-height:calc(100vh - 70px);padding:8px}
-      h1{font-size:2.1rem}
-      h2{font-size:1.75rem}
-      .logo-strip{grid-template-columns:1fr 1fr;gap:8px}
-      .logo-chip{min-height:50px;padding:4px;border-radius:8px}
-      .logo-chip img{max-height:28px}
-      .btn{padding:12px 16px;font-size:.9rem}
-      .section{padding:55px 0}
-      /* Extra tightening for very small phones */
-      .dashboard{padding:10px;border-radius:22px}
-      .dashboard::before{inset:-12px -12px}
-      .dash-body{grid-template-columns:54px 1fr}
-      .sidebar{padding:10px 6px}
-      .side-logo{width:30px;height:30px;border-radius:10px;margin-bottom:18px}
-      .side-item{height:28px;margin-bottom:7px}
-      .content{padding:12px}
-      .stat b{font-size:1.1rem}
-      .stat small{font-size:.66rem}
-      .message .pic{width:28px;height:28px;font-size:.62rem}
-      .message b{font-size:.76rem}
-      .message span{font-size:.64rem}
-      .badge{font-size:.58rem;padding:3px 6px}
-      .mini-title{font-size:.85rem;margin-bottom:10px}
-      .dash-shell{min-height:480px}
-      .dash-body{height:418px}
-      .dash-top{height:50px}
-      .dash-top strong{font-size:.85rem}
-      .stats-row{gap:6px}
-      .stat{padding:8px}
-      .inbox{padding:8px;margin-top:8px}
-      .message{padding:7px 0}
+    /* Typewriter cursor */
+    .cursor::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+      color: var(--tdq-primary);
+      margin-right: 2px;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #F6F4ED; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #00A2B5, #007A87); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #00C9B6, #00A2B5); }
+
+    /* Hover lift */
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(2, 37, 46, 0.12);
+    }
+
+    /* Number flow gradient */
+    .num-flow {
+      background: linear-gradient(180deg, #02252E 0%, #007A87 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Section divider wave */
+    .wave-divider {
+      position: relative;
+      height: 60px;
+      overflow: hidden;
+    }
+    .wave-divider svg { width: 100%; height: 100%; }
+
+    /* Chat bubble animation */
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .chat-bubble-in { animation: slideInRight 0.4s ease-out forwards; }
+    .chat-bubble-out { animation: slideInLeft 0.4s ease-out forwards; }
+
+    /* Pulse dot */
+    .pulse-dot {
+      position: relative;
+    }
+    .pulse-dot::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: inherit;
+      opacity: 0.4;
+      animation: pulseDot 2s ease-out infinite;
+    }
+    @keyframes pulseDot {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* Grid pattern */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(0,162,181,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,162,181,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Marquee for logos */
+    @keyframes marquee {
+    0%   { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+    }
+    .marquee-track {
+      animation: marquee 30s linear infinite;
+    }
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* FAQ accordion */
+    .faq-item .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-item.open .faq-body {
+      max-height: 500px;
+    }
+    .faq-item .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Nav scrolled state */
+    .nav-glass {
+      background: rgba(2, 37, 46, 0.95);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Active nav link */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00A2B5, #00C9B6);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Hide scrollbar for dashboard */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Loading bar shimmer */
+    .loading-bar {
+      background: linear-gradient(90deg, #00A2B5 0%, #00C9B6 50%, #00A2B5 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2s linear infinite;
     }
   </style>
 </head>
-<body>
 
-  <div class="nav-wrap">
-    <nav aria-label="التنقل الرئيسي">
-      <a class="brand" href="#top" aria-label="تدفق">
-        <img src="assets/images/logo.png" alt="تدفق" class="brand-logo">
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#why">لماذا تدفق؟</a>
-        <a href="#transformation">قبل وبعد</a>
-        <a href="#features">المزايا</a>
-        <a href="#clients">العملاء</a>
+<body class="font-sans antialiased text-ink bg-cream">
+
+  <!-- ============ NAVBAR ============ -->
+   
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-ink-900" style="background-color: #02252E; border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <img src="assets/images/logo.png" alt="تدفق" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" style="filter: drop-shadow(0 1px 6px rgba(0,162,181,0.4)) drop-shadow(0 1px 12px rgba(0,201,182,0.2));">
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-9">
+          <a href="#features" class="nav-link text-sm font-bold text-white/70 hover:text-teal-400">المزايا</a>
+          <a href="#how" class="nav-link text-sm font-bold text-white/70 hover:text-teal-400">كيف يعمل</a>
+          <!-- <a href="#pricing" class="nav-link text-sm font-bold text-white/70 hover:text-teal-400">الأسعار</a> -->
+          <a href="#customers" class="nav-link text-sm font-bold text-white/70 hover:text-teal-400">العملاء</a>
+          <a href="#faq" class="nav-link text-sm font-bold text-white/70 hover:text-teal-400">الأسئلة</a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#" class="text-sm font-bold text-white/70 hover:text-teal-400 transition px-4 py-2">دخول</a>
+          <a href="#demo" class="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-l from-teal-500 to-teal-300 text-white text-sm font-bold shadow-lg shadow-teal-500/30 hover:shadow-xl hover:shadow-teal-500/40 hover:-translate-y-0.5 transition-all">
+            <span>احجز عرضًا تجريبيًا</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="rotate-180">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 text-white">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
-      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
-      <a class="btn btn-primary" href="#contact">احجز عرضًا تجريبيًا</a>
-    </nav>
-  </div>
+    </div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy reveal">
-            <div class="tag"><span class="pulse"></span> منصة عمليات العملاء للشركات السعودية</div>
-            <h1>كل محادثة.<br>كل عميل.<br><span class="highlight">تدفّق واحد.</span></h1>
-            <p class="lead">منصة ذكية توحّد محادثات العملاء، تنظّم فرق المبيعات وخدمة العملاء، وتحوّل كل رسالة إلى فرصة واضحة يمكن متابعتها وقياسها.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#transformation">شاهد الفرق</a>
-              <a class="btn btn-ghost" href="#features">استكشف المنصة</a>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden backdrop-blur-lg border-t border-white/5" style="background-color: #02252E;">
+      <div class="px-6 py-5 space-y-3">
+        <a href="#features" class="block py-2 text-base font-bold text-white/70 hover:text-teal-400">المزايا</a>
+        <a href="#how" class="block py-2 text-base font-bold text-white/70 hover:text-teal-400">كيف يعمل</a>
+        <!-- <a href="#pricing" class="block py-2 text-base font-bold text-white/70 hover:text-teal-400">الأسعار</a> -->
+        <a href="#customers" class="block py-2 text-base font-bold text-white/70 hover:text-teal-400">العملاء</a>
+        <a href="#faq" class="block py-2 text-base font-bold text-white/70 hover:text-teal-400">الأسئلة</a>
+        <a href="#demo" class="block mt-3 text-center py-3 rounded-xl bg-gradient-to-l from-teal-500 to-teal-300 text-white font-bold">احجز عرضًا تجريبيًا</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="relative pt-32 pb-24 lg:pt-40 lg:pb-32  overflow-hidden" style="background-color: #02252E;">
+    <!-- Background blobs -->
+    <div class="blob w-[500px] h-[500px] bg-teal-500/20 -top-20 -right-20 animate-float"></div>
+    <div class="blob w-[400px] h-[400px] bg-teal-400/15 top-40 -left-20 animate-float-slow"></div>
+    <div class="blob w-[300px] h-[300px] bg-gold/10 bottom-0 right-1/3 animate-float"></div>
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 ">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+        <!-- Left: Content -->
+        <div class="text-right">
+          <!-- Badge -->
+          <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background: rgba(0,162,181,0.15); border: 1px solid rgba(0,162,181,0.3);">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
+            </span>
+            <span class="text-xs font-bold text-teal-400">منصة عمليات العملاء للشركات السعودية</span>
+          </div>
+
+          <!-- Heading -->
+          <h1 class="reveal reveal-delay-1 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] text-white mb-6">
+            كل محادثة.<br/>
+            كل عميل.<br/>
+            <span class="gradient-text">تدفّق واحد.</span>
+          </h1>
+
+          <!-- Subheading -->
+          <p class="reveal reveal-delay-2 text-lg md:text-xl leading-relaxed mb-8 max-w-xl" style="color: rgba(255,255,255,0.6);">
+            منصة ذكية توحّد محادثات العملاء، تنظّم فرق المبيعات وخدمة العملاء، وتحوّل كل رسالة إلى فرصة واضحة يمكن متابعتها وقياسها — بالذكاء والأتمتة.
+          </p>
+
+          <!-- CTAs -->
+          <div class="reveal reveal-delay-3 flex flex-wrap items-center gap-4 mb-12">
+            <a href="#demo" class="group inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-gradient-to-l from-teal-600 to-teal-400 text-white font-bold shadow-xl shadow-teal-500/30 hover:shadow-2xl hover:shadow-teal-500/50 hover:-translate-y-1 transition-all">
+              <span>احجز عرضًا تجريبيًا</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="rotate-180 group-hover:-translate-x-1 transition-transform">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#dashboard" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-bold transition-all" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
+              </svg>
+              <span>شاهد الفرق</span>
+            </a>
+          </div>
+
+          <!-- Mini stats -->
+          <div class="reveal reveal-delay-4 grid grid-cols-3 gap-4 max-w-lg">
+            <div class="text-right">
+              <div class="text-3xl font-extrabold text-white" data-counter="92" data-suffix="%">0</div>
+              <div class="text-xs mt-1 font-medium" style="color: rgba(255,255,255,0.5);">انخفاض زمن الرد</div>
             </div>
-            <div class="hero-trust">
-              <div class="avatars" aria-hidden="true">
-                <span class="avatar">خ</span><span class="avatar">م</span><span class="avatar">ب</span><span class="avatar">ع</span>
+            <div class="text-right pr-4" style="border-right: 1px solid rgba(255,255,255,0.1);">
+              <div class="text-3xl font-extrabold text-white" data-counter="35" data-suffix="%">0</div>
+              <div class="text-xs mt-1 font-medium" style="color: rgba(255,255,255,0.5);">تحسن التحويل</div>
+            </div>
+            <div class="text-right pr-4" style="border-right: 1px solid rgba(255,255,255,0.1);">
+              <div class="text-3xl font-extrabold text-white" data-counter="20" data-suffix="د">0</div>
+              <div class="text-xs mt-1 font-medium" style="color: rgba(255,255,255,0.5);">متوسط الرد</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Chat Preview -->
+        <div class="reveal reveal-delay-2 relative">
+          <!-- Floating accent cards -->
+          <div class="absolute -top-6 -right-4 z-20 rounded-2xl p-3 pr-4 shadow-xl animate-float" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15);">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 12l3-3 4 4 5-5 6 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
-              <span>مصممة لفرق المبيعات وخدمة العملاء التي لا تريد أن تفقد أي فرصة.</span>
+              <div>
+                <div class="text-[10px] font-medium" style="color: rgba(255,255,255,0.5);">تحسن التحويل</div>
+                <div class="text-base font-extrabold text-teal-400">+35%</div>
+              </div>
             </div>
           </div>
 
-          <div class="dashboard reveal" aria-label="محاكاة لوحة تحكم تدفق">
-            <div class="dash-shell">
-              <div class="dash-top">
-                <strong>مركز عمليات العملاء</strong>
-                <div class="dotset"><i></i><i></i><i></i></div>
+          <div class="absolute -bottom-4 -left-4 z-20 rounded-2xl p-3 pr-4 shadow-xl animate-float-slow" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15);">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-amber-500 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z" fill="white"/>
+                </svg>
               </div>
-              <div class="dash-body">
-                <aside class="sidebar">
-                  <div class="side-logo"><img src="assets/images/logo.png" alt="تدفق"></div>
-                  <div class="side-item active"></div>
-                  <div class="side-item"></div>
-                  <div class="side-item"></div>
-                  <div class="side-item"></div>
-                  <div class="side-item"></div>
-                </aside>
-                <div class="content">
-                  <div class="mini-title">نظرة اليوم</div>
-                  <div class="stats-row">
-                    <div class="stat"><b>86</b><small>محادثة جديدة</small></div>
-                    <div class="stat"><b>20 د</b><small>متوسط الرد</small></div>
-                    <div class="stat"><b>35%</b><small>تحسن التحويل</small></div>
+              <div>
+                <div class="text-[10px] font-medium" style="color: rgba(255,255,255,0.5);">تقييم العملاء</div>
+                <div class="text-base font-extrabold text-white">4.9/5</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat window -->
+          <div class="relative rounded-3xl p-5 shadow-2xl" style="background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12);">
+            <!-- Chat header -->
+            <div class="flex items-center justify-between pb-4" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div class="flex items-center gap-3">
+                <div class="relative">
+                  <div class="w-11 h-11 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold">ن</div>
+                  <span class="absolute -bottom-0.5 -left-0.5 w-3.5 h-3.5 bg-green-400 rounded-full" style="border: 2px solid #02252E;"></span>
+                </div>
+                <div>
+                  <div class="font-bold text-white text-sm">نورة العتيبي</div>
+                  <div class="text-xs flex items-center gap-1" style="color: rgba(255,255,255,0.5);">
+                    <span class="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                    متصل الآن • عميل نشط
                   </div>
-                  <div class="inbox">
-                    <div class="message"><span class="pic">ن</span><div><b>نورة العتيبي</b><span>أحتاج عرض سعر للخدمة...</span></div><span class="badge">جديدة</span></div>
-                    <div class="message"><span class="pic">م</span><div><b>محمد القحطاني</b><span>تم تحويل المحادثة للمبيعات</span></div><span class="badge">متابعة</span></div>
-                    <div class="message"><span class="pic">س</span><div><b>سارة أحمد</b><span>موعد التواصل غدًا 10:00</span></div><span class="badge">موعد</span></div>
-                    <div class="message"><span class="pic">ع</span><div><b>عبدالله صالح</b><span>تم إرسال العرض التجاري</span></div><span class="badge">عرض</span></div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold" style="background: rgba(0,162,181,0.2); color: #00C9B6;">جديد</span>
+              </div>
+            </div>
+
+            <!-- Chat messages -->
+            <div id="chatMessages" class="py-4 space-y-3 min-h-[280px] max-h-[280px] overflow-y-auto no-scrollbar">
+              <!-- Messages will be inserted by JS -->
+            </div>
+
+            <!-- Chat input -->
+            <div class="flex items-center gap-2 pt-3" style="border-top: 1px solid rgba(255,255,255,0.1);">
+              <div class="flex-1 flex items-center gap-2 px-4 py-2.5 rounded-xl" style="background: rgba(255,255,255,0.05);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: rgba(255,255,255,0.3);">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="text-sm" style="color: rgba(255,255,255,0.3);">اكتب ردًا...</span>
+              </div>
+              <button class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white hover:scale-105 transition">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Background glow -->
+          <div class="absolute inset-0 -z-10 rounded-3xl blur-2xl" style="background: radial-gradient(ellipse at center, rgba(0,162,181,0.2) 0%, transparent 70%);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOMERS LOGOS STRIP ============ -->
+  <section id="customers-strip" class="py-14 bg-white border-y border-ink/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-center text-sm font-bold text-ink/50 mb-8 tracking-wide reveal">
+        موثوق به من فرق سعودية رائدة في قطاعات متنوعة
+      </p>
+      <div class="overflow-hidden marquee">
+        <div class="flex marquee-track items-center gap-16 w-max">
+          <!-- Set 1 -->
+          <div class="flex items-center gap-16 px-6">
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/wasit.png" alt="وسيط العالم" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/citybroker.png" alt="وسيط المدينة" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/hamd.png" alt="حمد العقيل" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/rashud.png" alt="الرشيد" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/sahab.png" alt="سحاب للاستقدام" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+          </div>
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="flex items-center gap-16 px-6">
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/wasit.png" alt="وسيط العالم" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/citybroker.png" alt="وسيط المدينة" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/hamd.png" alt="حمد العقيل" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/rashud.png" alt="الرشيد" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+            <div class="logo-item flex items-center justify-center">
+              <img src="assets/images/sahab.png" alt="سحاب للاستقدام" class="h-[55px] md:h-[75px] w-auto object-contain">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+   <!-- ============ VIDEO SHOWCASE ============ -->
+  <!--
+    لاستبدال الفيديو:
+    ==================
+    الخيار 1 (ملف MP4 محلي):
+      - ضع ملف الفيديو في نفس مجلد index.html باسم platform-video.mp4
+      - ضع صورة معاينة باسم video-poster.jpg (أو استبدل رابط poster أدناه)
+
+    الخيار 2 (YouTube / Vimeo):
+      - استبدل عنصر <video> التالي بـ:
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          class="absolute inset-0 w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+  -->
+
+
+
+  <!-- ============ PROBLEM SECTION ============ -->
+  <section id="problem" class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="blob w-[400px] h-[400px] bg-cream-300/40 top-20 -left-32"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">لماذا تدفّق؟</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          المشكلة ليست في عدد الرسائل.<br/>
+          <span class="gradient-text">المشكلة في ما يحدث بعد وصولها.</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          عندما تعمل المحادثات دون نظام، تصبح خدمة العملاء بطيئة، المتابعة فردية، والقرارات مبنية على التخمين. هذه هي الأعراض الثلاثة الأكثر شيوعًا في الشركات السعودية.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="reveal glass rounded-3xl p-8 hover-lift">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-400/20 to-rose-500/10 flex items-center justify-center mb-6">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-rose-500">
+              <path d="M12 2v6m0 0v6m0-6h6m-6 0H6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-3">فرص تتسرب بصمت</h3>
+          <p class="text-ink/65 leading-relaxed mb-5">
+            عميل ينتظر الرد، محادثة تُنسى، وموظف لا يعرف من تابعها آخر مرة. كل ساعة تأخير تعني فرصة ضائعة قد لا تعود.
+          </p>
+          <div class="flex items-center gap-2 text-rose-500 font-bold text-sm">
+            <span>78%</span>
+            <span class="text-ink/40">من العملاء ينتقلون للمنافس بعد تأخير الرد</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reveal reveal-delay-1 glass rounded-3xl p-8 hover-lift">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400/20 to-amber-500/10 flex items-center justify-center mb-6">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-amber-600">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-3">لا توجد رؤية موحّدة</h3>
+          <p class="text-ink/65 leading-relaxed mb-5">
+            الإدارة لا ترى حجم الطلبات، جودة الرد، أسباب فقد العملاء، أو أداء كل موظف. القرارات تُتخذ بالتخمين بدل البيانات.
+          </p>
+          <div class="flex items-center gap-2 text-amber-600 font-bold text-sm">
+            <span>0</span>
+            <span class="text-ink/40">لوحة قياس موحّدة في الأنظمة التقليدية</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reveal reveal-delay-2 glass rounded-3xl p-8 hover-lift">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400/20 to-purple-500/10 flex items-center justify-center mb-6">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-purple-600">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-3">نمو يعتمد على أشخاص</h3>
+          <p class="text-ink/65 leading-relaxed mb-5">
+            كل موظف يعمل بطريقته، ومع زيادة المحادثات تتضاعف الأخطاء بدل أن تتضاعف النتائج. النظام لا يتكرر، والمعرفة لا تتراكم.
+          </p>
+          <div class="flex items-center gap-2 text-purple-600 font-bold text-sm">
+            <span>3x</span>
+            <span class="text-ink/40">تضاعف الأخطاء مع مضاعفة حجم الفريق</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE / AFTER ============ -->
+  <section id="before-after" class="py-24 lg:py-32 bg-gradient-to-b from-white to-cream relative overflow-hidden">
+    <div class="blob w-[450px] h-[450px] bg-teal-200/40 top-0 right-0"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">قبل / بعد</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          تحول تشغيلي واضح<br/>
+          <span class="gradient-text">من الفوضى إلى التدفّق</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          تدفّق لا تضيف قناة جديدة فقط؛ بل تعيد ترتيب رحلة العميل داخل شركتك من أول رسالة حتى إغلاق الفرصة.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <!-- Before -->
+        <div class="reveal glass rounded-3xl p-8 border-2 border-rose-200/50">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-rose-500">
+                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs text-ink/50 font-bold">قبل تدفّق</div>
+                <div class="text-lg font-extrabold text-ink">تشغيل يدوي</div>
+              </div>
+            </div>
+            <div class="text-left">
+              <div class="text-3xl font-extrabold text-rose-500">4 ساعات</div>
+              <div class="text-xs text-ink/50">متوسط زمن الرد</div>
+            </div>
+          </div>
+
+          <ul class="space-y-3.5">
+            <li class="flex items-start gap-3 text-ink/65">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/></svg>
+              </span>
+              <span>رسائل موزعة بين أجهزة وأرقام متعددة</span>
+            </li>
+            <li class="flex items-start gap-3 text-ink/65">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/></svg>
+              </span>
+              <span>لا توجد ملكية واضحة لكل محادثة</span>
+            </li>
+            <li class="flex items-start gap-3 text-ink/65">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/></svg>
+              </span>
+              <span>المتابعة تعتمد على الذاكرة والاجتهاد</span>
+            </li>
+            <li class="flex items-start gap-3 text-ink/65">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/></svg>
+              </span>
+              <span>التقارير محدودة والفرص المفقودة غير معروفة</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- After -->
+        <div class="reveal reveal-delay-1 glass-mint rounded-3xl p-8 border-2 border-teal-300/50 relative overflow-hidden">
+          <div class="absolute top-0 left-0 px-4 py-1.5 bg-gradient-to-l from-teal-500 to-teal-400 text-white text-xs font-bold rounded-br-2xl">
+            النسخة الأذكى
+          </div>
+
+          <div class="flex items-center justify-between mb-6 mt-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12l5 5L20 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs text-teal-700 font-bold">بعد تدفّق</div>
+                <div class="text-lg font-extrabold text-ink">تشغيل ذكي</div>
+              </div>
+            </div>
+            <div class="text-left">
+              <div class="text-3xl font-extrabold gradient-text">20 دقيقة</div>
+              <div class="text-xs text-ink/50">متوسط زمن الرد</div>
+            </div>
+          </div>
+
+          <ul class="space-y-3.5">
+            <li class="flex items-start gap-3 text-ink/75">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00A2B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>صندوق موحد لجميع محادثات العملاء</span>
+            </li>
+            <li class="flex items-start gap-3 text-ink/75">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00A2B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>توزيع تلقائي حسب الفريق والاختصاص</span>
+            </li>
+            <li class="flex items-start gap-3 text-ink/75">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00A2B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>تذكير ومتابعة لكل فرصة حتى إغلاقها</span>
+            </li>
+            <li class="flex items-start gap-3 text-ink/75">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00A2B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>لوحات قياس توضح الأداء والاختناقات</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Big counters -->
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass rounded-3xl p-8 text-center hover-lift">
+          <div class="text-5xl md:text-6xl font-extrabold gradient-text mb-2">
+            <span data-counter="92" data-suffix="%">0</span>
+          </div>
+          <div class="text-sm font-bold text-ink/70 mb-1">انخفاض في زمن الاستجابة</div>
+          <div class="text-xs text-ink/40">من 4 ساعات إلى 20 دقيقة</div>
+        </div>
+        <div class="glass rounded-3xl p-8 text-center hover-lift">
+          <div class="text-5xl md:text-6xl font-extrabold gradient-text mb-2">
+            +<span data-counter="35" data-suffix="%">0</span>
+          </div>
+          <div class="text-sm font-bold text-ink/70 mb-1">تحسن محتمل في التحويل</div>
+          <div class="text-xs text-ink/40">نتيجة المتابعة المنظمة</div>
+        </div>
+        <div class="glass rounded-3xl p-8 text-center hover-lift">
+          <div class="text-5xl md:text-6xl font-extrabold gradient-text mb-2">
+            <span data-counter="1" data-suffix="">0</span>
+          </div>
+          <div class="text-sm font-bold text-ink/70 mb-1">منصة للمحادثات والمتابعة والتقارير</div>
+          <div class="text-xs text-ink/40">بدل 5 أدوات منفصلة</div>
+        </div>
+      </div>
+
+      <p class="reveal text-center text-xs text-ink/40 mt-6 max-w-2xl mx-auto">
+        الأرقام المعروضة تمثل حالة استخدام توضيحية مبنية على نموذج: 4 ساعات قبل تدفّق و20 دقيقة بعد تدفّق. تختلف النتائج حسب حجم الفريق وآلية التشغيل.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ LIVE DASHBOARD MOCKUP ============ -->
+  <section id="dashboard" class="py-24 lg:py-32 bg-ink relative overflow-hidden">
+    <div class="blob w-[500px] h-[500px] bg-teal-500/20 top-0 right-0"></div>
+    <div class="blob w-[400px] h-[400px] bg-teal-300/10 bottom-0 left-0"></div>
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-5">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-300 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
+          </span>
+          <span class="text-xs font-bold text-teal-300">استكشف المنصة</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
+          مركز عمليات العملاء<br/>
+          <span class="gradient-text">بنظرة اليوم</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-white/60 leading-relaxed">
+          مصممة لفرق المبيعات وخدمة العملاء التي لا تريد أن تفقد أي فرصة. كل محادثة، كل موظف، وكل رقم — في لوحة واحدة.
+        </p>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="reveal glass-dark rounded-3xl p-4 md:p-6 shadow-2xl border border-white/10">
+        <!-- Dashboard top bar -->
+        <div class="flex items-center justify-between mb-5 pb-4 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-rose-400/60"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400/60"></span>
+              <span class="w-3 h-3 rounded-full bg-green-400/60"></span>
+            </div>
+            <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-lg bg-white/5 text-white/40 text-xs">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/></svg>
+              app.tadfuq.sa/dashboard
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 text-white/60 text-xs">
+              <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+              متصل مباشر
+            </div>
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold">ع</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <!-- Sidebar: conversations list -->
+          <div class="lg:col-span-4 glass-dark rounded-2xl p-3 border border-white/5">
+            <div class="flex items-center justify-between mb-3 px-2">
+              <h4 class="text-white font-bold text-sm">المحادثات النشطة</h4>
+              <span class="px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 text-[10px] font-bold">86 جديد</span>
+            </div>
+            <div class="space-y-2">
+              <!-- Conv 1 -->
+              <div class="p-3 rounded-xl bg-teal-500/15 border border-teal-400/30 cursor-pointer">
+                <div class="flex items-center gap-3 mb-1.5">
+                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold">ن</div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-white text-sm font-bold">نورة العتيبي</span>
+                      <span class="text-[10px] text-teal-300">الآن</span>
+                    </div>
+                    <p class="text-white/50 text-xs truncate">أحتاج عرض سعر للخدمة...</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-rose-400/20 text-rose-300 text-[10px] font-bold">جديد</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-white/60 text-[10px]">واتساب</span>
+                </div>
+              </div>
+
+              <!-- Conv 2 -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+                <div class="flex items-center gap-3 mb-1.5">
+                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold">م</div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-white/90 text-sm font-bold">محمد القحطاني</span>
+                      <span class="text-[10px] text-white/40">5د</span>
+                    </div>
+                    <p class="text-white/50 text-xs truncate">تم تحويل المحادثة للمبيعات</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 text-[10px] font-bold">متابعة</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-white/60 text-[10px]">إنستقرام</span>
+                </div>
+              </div>
+
+              <!-- Conv 3 -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+                <div class="flex items-center gap-3 mb-1.5">
+                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white text-xs font-bold">س</div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-white/90 text-sm font-bold">سارة أحمد</span>
+                      <span class="text-[10px] text-white/40">12د</span>
+                    </div>
+                    <p class="text-white/50 text-xs truncate">موعد التواصل غدًا 10:00</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-blue-400/20 text-blue-300 text-[10px] font-bold">موعد</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-white/60 text-[10px]">واتساب</span>
+                </div>
+              </div>
+
+              <!-- Conv 4 -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+                <div class="flex items-center gap-3 mb-1.5">
+                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white text-xs font-bold">ع</div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-white/90 text-sm font-bold">عبدالله صالح</span>
+                      <span class="text-[10px] text-white/40">25د</span>
+                    </div>
+                    <p class="text-white/50 text-xs truncate">تم إرسال العرض التجاري</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-green-400/20 text-green-300 text-[10px] font-bold">عرض</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-white/60 text-[10px]">X</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main: stats and chart -->
+          <div class="lg:col-span-8 space-y-4">
+            <!-- Stats row -->
+            <div class="grid grid-cols-3 gap-3">
+              <div class="glass-dark rounded-2xl p-4 border border-white/5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-white/50 text-[11px] font-bold">محادثات جديدة</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-teal-300">
+                    <path d="M12 5v14M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="text-3xl font-extrabold text-white mb-1" data-counter="86">0</div>
+                <div class="text-[10px] text-teal-300 font-bold flex items-center gap-1">
+                  <span>↑ 12%</span>
+                  <span class="text-white/40">عن الأمس</span>
+                </div>
+              </div>
+              <div class="glass-dark rounded-2xl p-4 border border-white/5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-white/50 text-[11px] font-bold">متوسط الرد</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-amber-300">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="text-3xl font-extrabold text-white mb-1"><span data-counter="20">0</span>د</div>
+                <div class="text-[10px] text-teal-300 font-bold flex items-center gap-1">
+                  <span>↓ 92%</span>
+                  <span class="text-white/40">تحسن</span>
+                </div>
+              </div>
+              <div class="glass-dark rounded-2xl p-4 border border-white/5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-white/50 text-[11px] font-bold">تحسن التحويل</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-green-300">
+                    <path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="text-3xl font-extrabold text-white mb-1">+<span data-counter="35">0</span>%</div>
+                <div class="text-[10px] text-teal-300 font-bold flex items-center gap-1">
+                  <span>↑ 35%</span>
+                  <span class="text-white/40">هذا الشهر</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart area -->
+            <div class="glass-dark rounded-2xl p-5 border border-white/5">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h4 class="text-white font-bold text-sm">حجم المحادثات خلال الأسبوع</h4>
+                  <p class="text-white/40 text-[11px]">آخر 7 أيام — جميع القنوات</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="flex items-center gap-1 text-[10px] text-white/60">
+                    <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                    واتساب
+                  </span>
+                  <span class="flex items-center gap-1 text-[10px] text-white/60">
+                    <span class="w-2 h-2 rounded-full bg-gold"></span>
+                    إنستقرام
+                  </span>
+                </div>
+              </div>
+              <!-- Simple bar chart -->
+              <div class="flex items-end justify-between gap-2 h-32" id="dashboardChart">
+                <!-- Bars will be rendered by JS -->
+              </div>
+              <div class="flex items-center justify-between mt-3 text-[10px] text-white/40">
+                <span>السبت</span><span>الأحد</span><span>الإثنين</span><span>الثلاثاء</span><span>الأربعاء</span><span>الخميس</span><span>الجمعة</span>
+              </div>
+            </div>
+
+            <!-- Quick response bar -->
+            <div class="glass-dark rounded-2xl p-4 border border-white/5">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-white font-bold text-sm">أداء الفريق</span>
+                <span class="text-[10px] text-white/40">5 موظفين نشطين</span>
+              </div>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white text-[10px] font-bold">أ</div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-white/80 text-xs">أحمد — مبيعات</span>
+                      <span class="text-teal-300 text-[10px] font-bold">24 محادثة</span>
+                    </div>
+                    <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div class="h-full bg-gradient-to-l from-teal-400 to-teal-300 rounded-full dashboard-bar" data-width="92"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white text-[10px] font-bold">ل</div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-white/80 text-xs">لمى — خدمة عملاء</span>
+                      <span class="text-teal-300 text-[10px] font-bold">18 محادثة</span>
+                    </div>
+                    <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div class="h-full bg-gradient-to-l from-purple-400 to-purple-300 rounded-full dashboard-bar" data-width="68"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-[10px] font-bold">ف</div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-white/80 text-xs">فيصل — متابعة</span>
+                      <span class="text-teal-300 text-[10px] font-bold">15 محادثة</span>
+                    </div>
+                    <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div class="h-full bg-gradient-to-l from-amber-400 to-amber-300 rounded-full dashboard-bar" data-width="56"></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="float-card">
-              <small>وقت الاستجابة</small>
-              <strong>20 دقيقة</strong>
-              <small>بدلًا من 4 ساعات</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES (6) ============ -->
+  <section id="features" class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="blob w-[400px] h-[400px] bg-teal-200/40 top-40 -right-32"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">المزايا</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          من الرسائل إلى<br/>
+          <span class="gradient-text">منظومة تشغيل</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          كل ما يحتاجه فريقك ليعمل كفريق واحد. أدوات عملية مبنية حول سرعة الرد، وضوح المسؤوليات، وجودة المتابعة — وليس حول إضافة تعقيد تقني جديد.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Feature 01 -->
+        <div class="reveal glass rounded-3xl p-7 hover-lift group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-lg shadow-teal-500/30 group-hover:scale-110 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
+            <span class="text-3xl font-extrabold text-ink/10">01</span>
           </div>
+          <h3 class="text-xl font-extrabold text-ink mb-2.5">رقم واتساب موحد لكل فريقك
+</h3>
+          <p class="text-ink/60 leading-relaxed text-sm">
+          خط تواصل واحد، ومئات الموظفين! فعّل رقماً موحداً لخدمة عملائك عبر الواتساب في نفس الوقت ومن أجهزة متعددة، مع ميزة توزيع المحادثات تلقائياً على فريق المبيعات والدعم.
+          </p>
         </div>
 
-        <div class="logos reveal" id="clients">
-          <p>خبرة الفريق مع جهات في قطاع الاستقدام والخدمات</p>
-          <div class="logo-strip">
-            <div class="logo-chip" title="وسيط العالم"><img src="assets/images/wasut.png" alt="وسيط العالم"></div>
-            <div class="logo-chip" title="وسيط المدينة"><img src="assets/images/madunah-2.png" alt="وسيط المدينة" style="transform:scale(2.15);transform-origin:center"></div>
-            <div class="logo-chip" title="حمد العقيل"><img src="assets/images/hamd.png" alt="حمد العقيل"></div>
-            <div class="logo-chip" title="الرشيد"><img src="assets/images/rashud-2.png" alt="الرشيد"></div>
-            <div class="logo-chip" title="سحاب للاستقدام"><img src="assets/images/sahab.png" alt="سحابة للاستقدام"></div>
-
+        <!-- Feature 02 -->
+        <div class="reveal reveal-delay-1 glass rounded-3xl p-7 hover-lift group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold to-amber-500 flex items-center justify-center shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-3xl font-extrabold text-ink/10">02</span>
           </div>
+          <h3 class="text-xl font-extrabold text-ink mb-2.5">توزيع ذكي للمحادثات</h3>
+          <p class="text-ink/60 leading-relaxed text-sm">
+            حوّل كل محادثة تلقائيًا إلى الموظف أو القسم المناسب حسب الاختصاص، اللغة، أو قيمة الفرصة — بدون تدخل يدوي ولا تزاحم.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="why">
-      <div class="container problem-grid">
-        <div class="reveal">
-          <span class="eyebrow">المشكلة ليست في عدد الرسائل</span>
-          <h2>المشكلة في ما يحدث <span class="highlight">بعد وصولها.</span></h2>
-          <p class="lead">عندما تعمل المحادثات دون نظام، تصبح خدمة العملاء بطيئة، المتابعة فردية، والقرارات مبنية على التخمين.</p>
+        <!-- Feature 03 -->
+        <div class="reveal reveal-delay-2 glass rounded-3xl p-7 hover-lift group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M9 11l3 3L22 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-3xl font-extrabold text-ink/10">03</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-2.5">متابعة لا تنسى</h3>
+          <p class="text-ink/60 leading-relaxed text-sm">
+            مواعيد وتذكيرات ومراحل واضحة لكل فرصة، مع تنبيهات تلقائية لمنع تسرب أي عميل. لا تبقى أي فرصة بلا إجراء أو مسؤول.
+          </p>
         </div>
-        <div class="problem-list">
-          <article class="problem-item reveal">
-            <div class="icon">↗</div>
-            <div><h3>فرص تتسرب بصمت</h3><p>عميل ينتظر الرد، محادثة تُنسى، وموظف لا يعرف من تابعها آخر مرة.</p></div>
-          </article>
-          <article class="problem-item reveal">
-            <div class="icon">◎</div>
-            <div><h3>لا توجد رؤية موحّدة</h3><p>الإدارة لا ترى حجم الطلبات، جودة الرد، أسباب فقد العملاء أو أداء كل موظف.</p></div>
-          </article>
-          <article class="problem-item reveal">
-            <div class="icon">⌁</div>
-            <div><h3>نمو يعتمد على أشخاص</h3><p>كل موظف يعمل بطريقته، ومع زيادة المحادثات تتضاعف الأخطاء بدل أن تتضاعف النتائج.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="transformation">
-      <div class="container">
-        <div class="compare-wrap reveal">
-          <div class="compare-head">
+        <!-- Feature 04 -->
+        <div class="reveal glass rounded-3xl p-7 hover-lift group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-3xl font-extrabold text-ink/10">04</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-2.5">ردود وأتمتة</h3>
+          <p class="text-ink/60 leading-relaxed text-sm">
+            اختصر وقت الفريق بالردود الجاهزة والمسارات الآلية للأسئلة المتكررة. ردود فورية خارج الدوام، وتصعيد ذكي للإنسان عند الحاجة.
+          </p>
+        </div>
+
+        <!-- Feature 05 -->
+        <div class="reveal reveal-delay-1 glass rounded-3xl p-7 hover-lift group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center shadow-lg shadow-rose-500/30 group-hover:scale-110 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3v18h18" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M7 14l3-3 4 4 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-3xl font-extrabold text-ink/10">05</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-2.5">تقارير لحظية</h3>
+          <p class="text-ink/60 leading-relaxed text-sm">
+            راقب زمن الرد، عدد المحادثات، التحويل، وأداء كل موظف من لوحة واحدة. اكتشف الاختناقات قبل أن تتحول إلى عملاء ضائعين.
+          </p>
+        </div>
+
+        <!-- Feature 06 -->
+        <div class="reveal reveal-delay-2 glass rounded-3xl p-7 hover-lift group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-700 to-ink flex items-center justify-center shadow-lg shadow-ink/30 group-hover:scale-110 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="7" r="4" stroke="white" stroke-width="2"/>
+                <circle cx="18" cy="10" r="2" stroke="white" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="text-3xl font-extrabold text-ink/10">06</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-ink mb-2.5">نظام CRM يمنحك رؤية 360 درجة لعملائك</h3>
+          <p class="text-ink/60 leading-relaxed text-sm">
+         تتبع رحلة العميل بالكامل من مكان واحد! يحفظ لك الـ CRM كل تفاعل، ملاحظة، ومرحلة بيعية في ملف موحّد. قدّم خدمة أسرع، وحافظ على اتساق تجربتك، واعرف احتياج عميلك قبل أن يكتب لك أول كلمة.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="customers" class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="blob w-[400px] h-[400px] bg-gold/15 top-20 left-0"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">آراء العملاء</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          فرق سعودية<br/>
+          <span class="gradient-text">تثبت الأثر</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          شركات في قطاعات الاستقدام، التجارة الإلكترونية، والخدمات — اختارت تدفّق لتنظيم عملياتها مع العملاء.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="reveal glass rounded-3xl p-7 hover-lift relative">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="absolute top-6 left-6 text-teal-500/15">
+            <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" fill="currentColor"/>
+          </svg>
+          <div class="flex items-center gap-1 mb-5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+          </div>
+          <p class="text-ink/75 leading-relaxed mb-6 relative z-10">
+            «ساعدتنا التقارير على قياس أداء الفريق ومعرفة مصادر الاستفسارات الأكثر فعالية، كما تحسنت تجربة المرضى بشكل ملحوظ نتيجة سرعة الاستجابة والمتابعة المستمرة»
+          </p>
+          <div class="flex items-center gap-3 pt-5 border-t border-ink/5">
+            <div class="w-12 h-12 overflow-hidden rounded-full  flex items-center justify-center text-white font-extrabold">
+              <img src="assets/images/circle_1.png" alt="" class="w-full h-full object-cover rounded-full">
+            </div>
             <div>
-              <span class="eyebrow" style="color:#00a2b5">تحول تشغيلي واضح</span>
-              <!-- <h2>قبل تدفق. وبعد تدفق.</h2> -->
+              <div class="font-extrabold text-ink">نوره بو عوض</div>
+              <div class="text-xs text-ink/50">عيادات كيلوباترا</div>
             </div>
-            <p>تدفق لا تضيف قناة جديدة فقط؛ بل تعيد ترتيب رحلة العميل داخل شركتك من أول رسالة حتى إغلاق الفرصة.</p>
-          </div>
-
-          <div class="compare-grid">
-            <article class="state-card before">
-              <div class="state-label"><span style="color:var(--green);">قبل تدفق</span><small>تشغيل يدوي</small></div>
-              <div class="state-number">4 ساعات</div>
-              <p>متوسط زمن الرد في نموذج التشغيل التقليدي.</p>
-              <ul>
-                <li><span class="check">×</span>رسائل موزعة بين أجهزة وأرقام متعددة</li>
-                <li><span class="check">×</span>لا توجد ملكية واضحة لكل محادثة</li>
-                <li><span class="check">×</span>المتابعة تعتمد على الذاكرة والاجتهاد</li>
-                <li><span class="check">×</span>التقارير محدودة والفرص المفقودة غير معروفة</li>
-              </ul>
-            </article>
-
-            <article class="state-card after">
-              <div class="state-label"><span>بعد تدفق</span><small>تشغيل ذكي</small></div>
-              <div class="state-number">20 دقيقة</div>
-              <p>متوسط زمن الرد بعد تنظيم المحادثات ومسارات المتابعة.</p>
-              <ul>
-                <li><span class="check">✓</span>صندوق موحد لجميع محادثات العملاء</li>
-                <li><span class="check">✓</span>توزيع تلقائي حسب الفريق والاختصاص</li>
-                <li><span class="check">✓</span>تذكير ومتابعة لكل فرصة حتى إغلاقها</li>
-                <li><span class="check">✓</span>لوحات قياس توضح الأداء والاختناقات</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="results">
-            <div class="result"><b>↓ 92%</b><span>انخفاض في زمن الاستجابة</span></div>
-            <div class="result"><b>+35%</b><span>تحسن محتمل في التحويل</span></div>
-            <div class="result"><b>1 منصة</b><span>للمحادثات والمتابعة والتقارير</span></div>
-          </div>
-          <p class="fineprint">الأرقام المعروضة تمثل حالة استخدام توضيحية مبنية على نموذج: 4 ساعات قبل تدفق و20 دقيقة بعد تدفق. تختلف النتائج حسب حجم الفريق وآلية التشغيل.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="features">
-      <div class="container">
-        <div class="reveal">
-          <span class="eyebrow">من الرسائل إلى منظومة تشغيل</span>
-          <h2>كل ما يحتاجه فريقك<br><span class="highlight">ليعمل كفريق واحد.</span></h2>
-          <p class="lead">أدوات عملية مبنية حول سرعة الرد، وضوح المسؤوليات، وجودة المتابعة—وليس حول إضافة تعقيد تقني جديد.</p>
-        </div>
-        <div class="features-grid">
-          <article class="feature reveal"><div class="num">01</div><h3>صندوق محادثات موحّد</h3><p>اجمع محادثات العملاء في مكان واحد مع سجل كامل لكل عميل.</p></article>
-          <article class="feature reveal"><div class="num">02</div><h3>توزيع ذكي للمحادثات</h3><p>حوّل كل محادثة تلقائيًا إلى الموظف أو القسم المناسب.</p></article>
-          <article class="feature reveal"><div class="num">03</div><h3>متابعة لا تنسى</h3><p>مواعيد وتذكيرات ومراحل واضحة حتى لا تبقى أي فرصة بلا إجراء.</p></article>
-          <article class="feature reveal"><div class="num">04</div><h3>ردود وأتمتة</h3><p>اختصر وقت الفريق بالردود الجاهزة والمسارات الآلية للأسئلة المتكررة.</p></article>
-          <article class="feature reveal"><div class="num">05</div><h3>تقارير لحظية</h3><p>راقب زمن الرد، عدد المحادثات، التحويل وأداء الموظفين من لوحة واحدة.</p></article>
-          <article class="feature reveal"><div class="num">06</div><h3>رؤية كاملة للعميل</h3><p>كل تفاعل وملاحظة ومرحلة بيعية محفوظة لتقديم تجربة أسرع وأكثر اتساقًا.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="reveal">
-          <span class="eyebrow">بدء سريع</span>
-          <h2>من الفوضى إلى تدفق<br><span class="highlight">في أربع خطوات.</span></h2>
-        </div>
-        <div class="steps">
-          <div class="step reveal"><span>الخطوة 01</span><h3>نفهم رحلة العميل</h3><p>نراجع قنوات التواصل والفريق ومسار البيع الحالي.</p></div>
-          <div class="step reveal"><span>الخطوة 02</span><h3>نصمم التدفق</h3><p>نحدد التوزيع، الحالات، الردود وقواعد المتابعة.</p></div>
-          <div class="step reveal"><span>الخطوة 03</span><h3>نربط ونفعّل</h3><p>نجهز الحسابات ونبني لوحة التشغيل المناسبة.</p></div>
-          <div class="step reveal"><span>الخطوة 04</span><h3>نقيس ونحسن</h3><p>نراجع الأداء ونحسن تجربة الفريق والعميل باستمرار.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonial">
-      <div class="container">
-        <div class="quote-card reveal">
-          <blockquote>“تدفق تجعل كل محادثة واضحة، كل مسؤولية معروفة، وكل فرصة قابلة للمتابعة.”</blockquote>
-          <div class="quote-author">
-            <strong>وعد تدفق</strong>
-            <span>تشغيل أذكى، استجابة أسرع، وفرص أقل ضياعًا.</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-box reveal">
-          <div>
-            <h2>هل فريقك جاهز لتدفّق أفضل؟</h2>
-            <p>احجز جلسة تعريفية قصيرة نراجع فيها وضع المحادثات الحالي ونوضح لك كيف يمكن تصميم تدفق يناسب فريقك.</p>
+        <!-- Testimonial 2 -->
+        <div class="reveal reveal-delay-1 glass rounded-3xl p-7 hover-lift relative">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="absolute top-6 left-6 text-teal-500/15">
+            <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" fill="currentColor"/>
+          </svg>
+          <div class="flex items-center gap-1 mb-5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
           </div>
-          <button class="btn" id="openContact">احجز عرضًا تجريبيًا</button>
-        </div>
-
-        <div class="contact-panel" id="contactPanel">
-          <form id="contactForm">
-            <div class="form-grid">
-              <div class="field"><label for="name">الاسم</label><input id="name" name="name" required placeholder="اسمك الكريم"></div>
-              <div class="field"><label for="company">اسم الشركة</label><input id="company" name="company" required placeholder="اسم الشركة"></div>
-              <div class="field"><label for="phone">رقم التواصل</label><input id="phone" name="phone" required placeholder="05xxxxxxxx"></div>
-              <div class="field"><label for="sector">القطاع</label><input id="sector" name="sector" placeholder="استقدام، خدمات، تعليم..."></div>
-              <div class="field full"><label for="message">ما التحدي الأكبر في محادثات العملاء لديكم؟</label><textarea id="message" name="message" placeholder="اكتب نبذة قصيرة..."></textarea></div>
+          <p class="text-ink/75 leading-relaxed mb-6 relative z-10">
+            «تدفّق نقلتنا من إدارة المحادثات إلى إدارة العملاء. أصبح لدينا رؤية واضحة لكل عميل، وتحسن مستوى المتابعة وسرعة الاستجابة بشكل ملحوظ وهذا الشي اثر على المبيعات بشكل إيجابي.»
+          </p>
+          <div class="flex items-center gap-3 pt-5 border-t border-ink/5">
+            <div class="w-12 h-12 overflow-hidden rounded-full  flex items-center justify-center text-white font-extrabold">
+              <img src="assets/images/circle_2.png" alt="" class="w-full h-full object-cover rounded-full">
             </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">إرسال الطلب</button>
-              <p class="form-note">سيتم فتح بريدك الإلكتروني برسالة جاهزة للإرسال.</p>
+            <div>
+              <div class="font-extrabold text-ink">ا. عبدالعزيز الحربي</div>
+              <div class="text-xs text-ink/50">شركة الين العقاريه</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <!-- <div class="reveal reveal-delay-2 glass rounded-3xl p-7 hover-lift relative">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="absolute top-6 left-6 text-teal-500/15">
+            <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" fill="currentColor"/>
+          </svg>
+          <div class="flex items-center gap-1 mb-5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+          </div>
+          <p class="text-ink/75 leading-relaxed mb-6 relative z-10">
+            «تدفّق ليست مجرد أداة محادثة، بل هي محرك تشغيل متكامل لشركتنا. وفرت علينا تكلفة تعيين موظفين إضافيين للمتابعة، وأعطتنا لوحة تحكم لحظية لم نكن نحلم بها سابقاً.»
+          </p>
+          <div class="flex items-center gap-3 pt-5 border-t border-ink/5">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-amber-500 flex items-center justify-center text-white font-extrabold">ف</div>
+            <div>
+              <div class="font-extrabold text-ink">فهد العتيبي</div>
+              <div class="text-xs text-ink/50">المشرف العام لشركة سحاب للاستقدام</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+
+<!-- ============ SECTORS / SYSTEM INTEGRATION ============ -->
+  <section id="sectors" class="py-24 lg:py-32 bg-gradient-to-b from-cream via-cream-50 to-white relative overflow-hidden">
+    <div class="blob w-[500px] h-[500px] bg-teal-200/40 top-20 right-0"></div>
+    <div class="blob w-[400px] h-[400px] bg-gold/10 bottom-20 left-0"></div>
+
+    <div class="relative flex justify-between gap-10 items-center max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Image -->
+      <div class="reveal text-center mb-10">
+        <div class="relative inline-block max-w-3xl w-full">
+          <div class="absolute -inset-3 bg-gradient-to-br from-teal-300/30 via-gold/15 to-teal-500/20 rounded-[2rem] blur-2xl"></div>
+         <!-- image api -->
+          <div class="relative glass rounded-3xl p-3 md:p-4 shadow-2xl shadow-ink/15">
+            <img src="assets/images/api.png" alt="" class="w-full h-full object-cover rounded-3xl">
+          </div>
+        </div>
+      </div>
+
+      <!-- Short description -->
+      <div class="reveal reveal-delay-1 text-center max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-ink leading-tight mb-5">
+          تدفّق مربوط مع <span class="gradient-text">الأنظمة التي تستخدمها</span>
+        </h2>
+        <p class="text-base md:text-lg text-ink/65 leading-relaxed">
+          تتكامل تدفّق مع قنوات التواصل (واتساب، المكالمات، البريد) وأنظمة إدارة العملاء (HubSpot، Zoho، Rekaz) ومختلف أنظمة ERP عبر API موثّق — فيتدفق كل شيء في مكان واحد دون انتقال بين التطبيقات أو فقدان السياق.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============ PRICING ============ -->
+  <section id="pricing" class="hidden py-24 lg:py-32 bg-gradient-to-b from-white to-cream relative overflow-hidden">
+    <div class="blob w-[400px] h-[400px] bg-teal-200/40 bottom-20 -right-32"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">الأسعار</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          خطط تنمو<br/>
+          <span class="gradient-text">مع حجم فريقك</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          ابدأ صغيرًا ووسّع مع نمو عملياتك. كل الباقات تشمل المميزات الأساسية دون مفاجآت.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Starter -->
+        <div class="reveal glass rounded-3xl p-8 hover-lift border border-ink/5">
+          <div class="mb-6">
+            <div class="text-xs font-bold text-ink/50 mb-2 tracking-wide">STARTER</div>
+            <div class="text-2xl font-extrabold text-ink mb-3">البداية</div>
+            <p class="text-sm text-ink/60 leading-relaxed">للفرق الصغيرة التي تبدأ بتنظيم محادثاتها لأول مرة.</p>
+          </div>
+          <div class="mb-6 pb-6 border-b border-ink/5">
+            <div class="flex items-end gap-1.5">
+              <span class="text-5xl font-extrabold gradient-text">299</span>
+              <span class="text-ink/50 font-bold mb-2">ر.س / شهر</span>
+            </div>
+            <div class="text-xs text-ink/40 mt-1">فواتير شهرية — بدون التزام سنوي</div>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>حتى 3 مستخدمين</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>1000 محادثة شهريًا</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>قناتان للتواصل</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>تقارير أساسية</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>دعم بريد إلكتروني</span>
+            </li>
+          </ul>
+          <a href="#demo" class="block text-center py-3.5 rounded-2xl border-2 border-teal-500 text-teal-600 font-bold hover:bg-teal-500 hover:text-white transition-all">
+            ابدأ الآن
+          </a>
+        </div>
+
+        <!-- Pro (Highlighted) -->
+        <div class="reveal reveal-delay-1 rounded-3xl p-8 hover-lift relative bg-gradient-to-b from-ink to-ink-800 text-white shadow-2xl shadow-ink/30 border-2 border-teal-400">
+          <div class="absolute -top-4 right-1/2 translate-x-1/2 px-4 py-1.5 bg-gradient-to-l from-teal-400 to-teal-300 text-ink text-xs font-extrabold rounded-full shadow-lg">
+            الأكثر شيوعًا
+          </div>
+          <div class="mb-6">
+            <div class="text-xs font-bold text-teal-300 mb-2 tracking-wide">PRO</div>
+            <div class="text-2xl font-extrabold text-white mb-3">الاحترافية</div>
+            <p class="text-sm text-white/60 leading-relaxed">للفرق المتنامية التي تريد أتمتة ورؤية أعمق.</p>
+          </div>
+          <div class="mb-6 pb-6 border-b border-white/10">
+            <div class="flex items-end gap-1.5">
+              <span class="text-5xl font-extrabold gradient-text">799</span>
+              <span class="text-white/60 font-bold mb-2">ر.س / شهر</span>
+            </div>
+            <div class="text-xs text-white/40 mt-1">فواتير شهرية — إلغاء في أي وقت</div>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-white/85">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-300"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>حتى 10 مستخدمين</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white/85">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-300"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>محادثات غير محدودة</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white/85">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-300"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>جميع قنوات التواصل</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white/85">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-300"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>تكاملات كاملة + API</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white/85">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-300"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>ذكاء اصطناعي وتحليلات</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white/85">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-300"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>دعم أولوية 24/7</span>
+            </li>
+          </ul>
+          <a href="#demo" class="block text-center py-3.5 rounded-2xl bg-gradient-to-l from-teal-400 to-teal-300 text-ink font-extrabold hover:shadow-lg hover:shadow-teal-500/30 transition-all">
+            احجز عرضًا تجريبيًا
+          </a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="reveal reveal-delay-2 glass rounded-3xl p-8 hover-lift border border-ink/5">
+          <div class="mb-6">
+            <div class="text-xs font-bold text-ink/50 mb-2 tracking-wide">ENTERPRISE</div>
+            <div class="text-2xl font-extrabold text-ink mb-3">مخصصة</div>
+            <p class="text-sm text-ink/60 leading-relaxed">للشركات الكبيرة بفروع متعددة واحتياجات خاصة.</p>
+          </div>
+          <div class="mb-6 pb-6 border-b border-ink/5">
+            <div class="flex items-end gap-1.5">
+              <span class="text-3xl font-extrabold text-ink">تواصل معنا</span>
+            </div>
+            <div class="text-xs text-ink/40 mt-1">حسب حجم الفريق والمتطلبات</div>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>مستخدمين غير محدودين</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>فروع متعددة وأدوار</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>اتفاقية مستوى خدمة SLA</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>تكاملات مخصصة + SSO</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>مدير حساب مخصص</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm text-ink/75">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-teal-500"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>تدريب و onboarding ميداني</span>
+            </li>
+          </ul>
+          <a href="#demo" class="block text-center py-3.5 rounded-2xl border-2 border-ink text-ink font-bold hover:bg-ink hover:text-white transition-all">
+            تواصل مع المبيعات
+          </a>
+        </div>
+      </div>
+
+      <p class="reveal text-center text-xs text-ink/40 mt-10">
+        جميع الأسعار لا تشمل ضريبة القيمة المضافة (15%). متوفر خصم 20% للاشتراك السنوي.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS (4 STEPS) ============ -->
+  <section id="how" class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="blob w-[450px] h-[450px] bg-teal-200/40 top-0 left-1/4"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">كيف يعمل</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          من الفوضى إلى التدفّق<br/>
+          <span class="gradient-text">في أربع خطوات</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          نبدأ معك خطوة بخطوة — ليس عليك أن تفعل كل شيء وحدك. فريقنا يساعدك على إطلاق تدفّق بطريقة احترافية.
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Connecting line -->
+        <div class="hidden lg:block absolute top-16 right-0 left-0 h-0.5 bg-gradient-to-l from-teal-200 via-teal-400 to-teal-200"></div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <!-- Step 01 -->
+          <div class="reveal text-center">
+            <div class="relative inline-flex items-center justify-center w-24 h-24 mb-5">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-teal-200 to-teal-100 animate-pulse-glow"></div>
+              <div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-xl shadow-teal-500/30">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 21l-4.35-4.35M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-ink text-white text-xs font-extrabold flex items-center justify-center">01</span>
+            </div>
+            <h3 class="text-lg font-extrabold text-ink mb-2">نفهم رحلة العميل</h3>
+            <p class="text-sm text-ink/60 leading-relaxed">
+              نراجع قنوات التواصل والفريق ومسار البيع الحالي. نكتشف نقاط الضعف والفرص قبل أي تنفيذ.
+            </p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="reveal reveal-delay-1 text-center">
+            <div class="relative inline-flex items-center justify-center w-24 h-24 mb-5">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-amber-200 to-amber-100 animate-pulse-glow"></div>
+              <div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-gold to-amber-500 flex items-center justify-center shadow-xl shadow-amber-500/30">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-ink text-white text-xs font-extrabold flex items-center justify-center">02</span>
+            </div>
+            <h3 class="text-lg font-extrabold text-ink mb-2">نصمم التدفّق</h3>
+            <p class="text-sm text-ink/60 leading-relaxed">
+              نحدد التوزيع، الحالات، الردود وقواعد المتابعة. نبني المسارات التي تناسب طريقة عمل فريقك.
+            </p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="reveal reveal-delay-2 text-center">
+            <div class="relative inline-flex items-center justify-center w-24 h-24 mb-5">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-200 to-purple-100 animate-pulse-glow"></div>
+              <div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center shadow-xl shadow-purple-500/30">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-ink text-white text-xs font-extrabold flex items-center justify-center">03</span>
+            </div>
+            <h3 class="text-lg font-extrabold text-ink mb-2">نربط ونفعّل</h3>
+            <p class="text-sm text-ink/60 leading-relaxed">
+              نجهز الحسابات ونربط القنوات ونبني لوحة التشغيل المناسبة. نقل تدفّق إلى الواقع بحركة فعلية.
+            </p>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="reveal reveal-delay-3 text-center">
+            <div class="relative inline-flex items-center justify-center w-24 h-24 mb-5">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-teal-700 to-teal-500 animate-pulse-glow"></div>
+              <div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-teal-700 to-ink flex items-center justify-center shadow-xl shadow-ink/30">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 3v18h18" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M7 14l3-3 4 4 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-ink text-white text-xs font-extrabold flex items-center justify-center">04</span>
+            </div>
+            <h3 class="text-lg font-extrabold text-ink mb-2">نقيس ونحسّن</h3>
+            <p class="text-sm text-ink/60 leading-relaxed">
+              نراجع الأداء ونحسّن تجربة الفريق والعميل باستمرار. التدفّق ليس منتجًا ثابتًا بل رحلة تحسين مستمرة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ink/5 mb-5">
+          <span class="text-xs font-bold text-ink/60">الأسئلة الشائعة</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-5">
+          أسئلة يطرحها<br/>
+          <span class="gradient-text">أصحاب الأعمال</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-ink/60 leading-relaxed">
+          أهم الأسئلة التي تصلنا من الشركات السعودية قبل البدء مع تدفّق.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="reveal faq-item glass rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-right">
+            <span class="font-extrabold text-ink text-lg">هل تدفّق بديل عن واتساب؟</span>
+            <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-6 text-ink/65 leading-relaxed">
+              لا، تدفّق ليس بديلًا عن واتساب أو أي قناة تواصل. بل هو طبقة فوقها — يربط كل قنواتك (واتساب، إنستقرام، X، سناب شات) في صندوق واحد، ويضيف عليها التوزيع الذكي والمتابعة والتحليلات. عملاؤك يستمرون في التواصل عبر القناة التي يفضلونها، وفريقك يديرها كلها من مكان واحد.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="reveal reveal-delay-1 faq-item glass rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-right">
+            <span class="font-extrabold text-ink text-lg">كم يستغرق التفعيل حتى أبدأ؟</span>
+            <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-6 text-ink/65 leading-relaxed">
+              للباقات الصغيرة (Starter)، يمكنك البدء خلال 24 ساعة بربط قناتك وإنشاء حسابات فريقك. للباقات الأكبر، نخصص جلسة onboarding مدتها أسبوع كامل نراقب فيها رحلة العميل، نصمم المسارات، وندرب الفريق. الهدف أن تكون جاهزًا تمامًا قبل الإطلاق الكامل.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="reveal faq-item glass rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-right">
+            <span class="font-extrabold text-ink text-lg">هل بياناتي وبيانات عملائي آمنة؟</span>
+            <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-6 text-ink/65 leading-relaxed">
+              نعم. خوادمنا مستضافة في مراكز بيانات معتمدة، وتشفير البيانات يتم في حالة السكون والنقل. تطبّق تدفّق ضوابط وصول حسب الدور، وسجل تدقيق كامل، ونسخ احتياطي يومي. كما أن المنصة تتوافق مع متطلبات نظام حماية البيانات الشخصية السعودي (PDPL).
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="reveal reveal-delay-1 faq-item glass rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-right">
+            <span class="font-extrabold text-ink text-lg">هل يدعم تدفّق أكثر من فرع أو قسم؟</span>
+            <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-6 text-ink/65 leading-relaxed">
+              تمامًا. يمكنك إنشاء فرق متعددة (مبيعات، خدمة عملاء، متابعة، فروع مدن مختلفة) لكل فريق قنواته، ساعات عمله، ومسارات توزيعه. الإدارة تملك رؤية موحّدة عبر كل الفرق، مع إمكانية عزل البيانات والمحادثات حسب الصلاحيات.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="reveal faq-item glass rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-right">
+            <span class="font-extrabold text-ink text-lg">ما الفرق بين تدفّق ومراكز الاتصال التقليدية؟</span>
+            <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-6 text-ink/65 leading-relaxed">
+              مراكز الاتصال التقليدية تركز على المكالمات وتتطلب أجهزة وشرايح وموظفين في مكان واحد. تدفّق يركز على القنوات النصية (واتساب، إنستقرام، X) التي يستخدمها العميل السعودي اليوميًا، ويعمل من أي جهاز دون أجهزة إضافية. كما يضيف طبقة ذكاء للمتابعة والتحليل لا تقدمها مراكز الاتصال التقليدية عادةً.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="reveal reveal-delay-1 faq-item glass rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-right">
+            <span class="font-extrabold text-ink text-lg">هل أحتاج خبرة تقنية لاستخدام تدفّق؟</span>
+            <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-6 text-ink/65 leading-relaxed">
+              إطلاقًا. صُممت تدفّق لتكون مألوفة لكل مستخدم واتساب أو بريد إلكتروني. فريقك لن يحتاج تدريبًا تقنيًا — واجهة بسيطة بالعربية، إعداد مسارات بالسحب والإفلات، ومساعد يرشدك في كل خطوة. وللباقات الأكبر، نوفّر مدير حساب يتولى الإعداد نيابة عنك.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA + FORM ============ -->
+  <section id="demo" class="py-24 lg:py-32 bg-ink relative overflow-hidden">
+    <div class="blob w-[500px] h-[500px] bg-teal-500/30 top-0 right-0"></div>
+    <div class="blob w-[400px] h-[400px] bg-gold/15 bottom-0 left-0"></div>
+    <div class="absolute inset-0 grid-pattern opacity-15"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: pitch -->
+        <div class="text-white text-right">
+          <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+            <span class="text-xs font-bold text-teal-300">ابدأ الآن</span>
+          </div>
+          <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+            هل فريقك جاهز<br/>
+            <span class="gradient-text">لتدفّق أفضل؟</span>
+          </h2>
+          <p class="reveal reveal-delay-2 text-lg text-white/60 leading-relaxed mb-8 max-w-md mr-0 ml-auto">
+            احجز جلسة تعريفية قصيرة نراجع فيها وضع محادثاتك الحالي ونوضح لك كيف يمكن تصميم تدفّق يناسب فريقك. الجلسة مجانية وبدون أي التزام.
+          </p>
+
+          <div class="reveal reveal-delay-3 space-y-4">
+            <div class="flex items-center gap-3 text-white/80">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00C9B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="text-base">تشغيل أذكى يقلل التدخل اليدوي</span>
+            </div>
+            <div class="flex items-center gap-3 text-white/80">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00C9B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="text-base">استجابة أسرع تزيد رضا العملاء</span>
+            </div>
+            <div class="flex items-center gap-3 text-white/80">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#00C9B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="text-base">فرص أقل ضياعًا ومتابعة لا تنقطع</span>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-4 mt-8 pt-8 border-t border-white/10 flex items-center gap-6">
+            <div>
+              <div class="text-2xl font-extrabold text-white">+150</div>
+              <div class="text-xs text-white/50">شركة سعودية</div>
+            </div>
+            <div class="w-px h-10 bg-white/10"></div>
+            <div>
+              <div class="text-2xl font-extrabold text-white">4.9/5</div>
+              <div class="text-xs text-white/50">تقييم العملاء</div>
+            </div>
+            <div class="w-px h-10 bg-white/10"></div>
+            <div>
+              <div class="text-2xl font-extrabold text-white">24/7</div>
+              <div class="text-xs text-white/50">دعم متواصل</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal reveal-delay-2">
+          <form id="demoForm" class="glass-dark rounded-3xl p-7 md:p-8 border border-white/10">
+            <h3 class="text-2xl font-extrabold text-white mb-1.5">احجز عرضًا تجريبيًا</h3>
+            <p class="text-sm text-white/50 mb-7">سنصل بك خلال 24 ساعة عمل</p>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-white/70 mb-2">الاسم الكامل</label>
+                <input type="text" required placeholder="اكتب اسمك" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-teal-400 focus:bg-white/10 transition"/>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-white/70 mb-2">اسم الشركة</label>
+                <input type="text" required placeholder="اسم شركتك" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-teal-400 focus:bg-white/10 transition"/>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-white/70 mb-2">رقم التواصل</label>
+                  <input type="tel" required placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-teal-400 focus:bg-white/10 transition" dir="ltr"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-white/70 mb-2">القطاع</label>
+                  <select required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-teal-400 focus:bg-white/10 transition">
+                    <option value="" class="text-ink">اختر القطاع</option>
+                    <option class="text-ink">استقدام</option>
+                    <option class="text-ink">تجارة إلكترونية</option>
+                    <option class="text-ink">خدمات</option>
+                    <option class="text-ink">عقارات</option>
+                    <option class="text-ink">تعليم</option>
+                    <option class="text-ink">صحة</option>
+                    <option class="text-ink">أخرى</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-white/70 mb-2">ما التحدي الأكبر في محادثات العملاء لديكم؟</label>
+                <textarea rows="3" placeholder="صف لنا الوضع الحالي بإيجاز..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-teal-400 focus:bg-white/10 transition resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-l from-teal-400 to-teal-300 text-ink font-extrabold hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                <span>أرسل الطلب</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="rotate-180"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <p class="text-center text-[11px] text-white/40">
+                بإرسالك الطلب، أنت توافق على سياسة الخصوصية. لن نشارك بياناتك مع أي طرف ثالث.
+              </p>
             </div>
           </form>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <div class="container footer-row">
-      <a class="brand" href="#top"><img src="assets/images/logo.png" alt="تدفق" class="brand-logo"></a>
-      <div class="footer-links"><a href="#why">لماذا تدفق؟</a><a href="#features">المزايا</a><a href="#clients">العملاء</a><a href="#contact">تواصل معنا</a></div>
-      <span class="copyright">© 2026 تدفق. جميع الحقوق محفوظة.</span>
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink-900 pt-20 pb-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
+
+        <!-- Column 1: Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="#" class="flex items-center gap-2.5 mb-4">
+            <img src="assets/images/logo.png" alt="تدفق" class="h-10 w-auto object-contain">
+          </a>
+          <p class="text-sm text-white/50 leading-relaxed mb-5 max-w-xs">
+            منصة عمليات العملاء للشركات السعودية. نحوّل المحادثات إلى منظومة تشغيل ذكية بالذكاء والأتمتة.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-teal-500 flex items-center justify-center transition" aria-label="X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-teal-500 flex items-center justify-center transition" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-teal-500 flex items-center justify-center transition" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div>
+          <h4 class="text-sm font-extrabold text-white mb-4">المنتج</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#features" class="text-sm text-white/50 hover:text-teal-400 transition">المزايا</a></li>
+            <!-- <li><a href="#pricing" class="text-sm text-white/50 hover:text-teal-400 transition">الأسعار</a></li> -->
+            <li><a href="#integrations" class="text-sm text-white/50 hover:text-teal-400 transition">التكاملات</a></li>
+            <li><a href="#" class="text-sm text-white/50 hover:text-teal-400 transition">الأمان</a></li>
+            <li><a href="#dashboard" class="text-sm text-white/50 hover:text-teal-400 transition">اللوحة</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div>
+          <h4 class="text-sm font-extrabold text-white mb-4">الشركة</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="text-sm text-white/50 hover:text-teal-400 transition">من نحن</a></li>
+            <li><a href="#customers" class="text-sm text-white/50 hover:text-teal-400 transition">العملاء</a></li>
+            <li><a href="#" class="text-sm text-white/50 hover:text-teal-400 transition">المدونة</a></li>
+            <li><a href="#" class="text-sm text-white/50 hover:text-teal-400 transition">وظائف</a></li>
+            <li><a href="#faq" class="text-sm text-white/50 hover:text-teal-400 transition">الأسئلة الشائعة</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h4 class="text-sm font-extrabold text-white mb-4">تواصل معنا</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2.5 text-sm text-white/50">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-teal-400"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg>
+              <span dir="ltr">Info@tadufg.com</span>
+            </li>
+            <li class="flex items-center gap-2.5 text-sm text-white/50">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-teal-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/></svg>
+              <span dir="ltr">0533778200</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-white/50">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-teal-400 mt-0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              <span>مكتب سوبر أوفيس، طريق خريص الفرعي، حي الروضة، شارع الحسن بن علي، مدينة الرياض 13211، المملكة العربية السعودية</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-white/40">© 2026 تدفّق. جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-xs text-white/40 hover:text-teal-400 transition">سياسة الخصوصية</a>
+          <a href="#" class="text-xs text-white/40 hover:text-teal-400 transition">الشروط والأحكام</a>
+          <a href="#" class="text-xs text-white/40 hover:text-teal-400 transition">سياسة الاستخدام</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Mobile sticky CTA bar (only visible at <= 680px) -->
-  <div class="mobile-cta-bar" id="mobileCtaBar" aria-label="إجراء سريع">
-    <a class="btn btn-ghost" href="#transformation" id="mobileCtaSecondary">شاهد الفرق</a>
-    <a class="btn btn-primary" href="#contact" id="mobileCtaPrimary">احجز عرضًا تجريبيًا</a>
-  </div>
-
+  <!-- ============ JAVASCRIPT ============ -->
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    const closeMenu = () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    };
-
-    menuBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    // ========== NAVBAR SCROLL EFFECT ==========
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('nav-glass', 'shadow-sm');
+      } else {
+        navbar.classList.remove('nav-glass', 'shadow-sm');
+      }
     });
 
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape') closeMenu();
+    // ========== MOBILE MENU ==========
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-    document.addEventListener('click', e => {
-      if(!navLinks.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
-    });
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 980) closeMenu();
-    });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    const observer = new IntersectionObserver((entries) => {
+    // ========== SCROLL REVEAL ==========
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, {threshold: .12});
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    const openContact = document.getElementById('openContact');
-    const contactPanel = document.getElementById('contactPanel');
-    openContact.addEventListener('click', () => {
-      contactPanel.classList.toggle('open');
-      if(contactPanel.classList.contains('open')) contactPanel.scrollIntoView({behavior:'smooth', block:'center'});
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ========== COUNTERS ==========
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.counter, 10);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1800;
+          const startTime = performance.now();
+
+          function update(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(eased * target);
+            el.textContent = value + (progress === 1 ? suffix : '');
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+    // ========== DASHBOARD BARS ==========
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.dashboard-bar').forEach((bar, i) => {
+            setTimeout(() => {
+              bar.style.width = bar.dataset.width + '%';
+              bar.style.transition = 'width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            }, i * 150);
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('#dashboard').forEach(el => {
+      document.querySelectorAll('.dashboard-bar').forEach(bar => bar.style.width = '0%');
+      barObserver.observe(el);
     });
 
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(e.target);
-      const subject = encodeURIComponent('طلب عرض تجريبي لمنصة تدفق - ' + data.get('company'));
-      const body = encodeURIComponent(
-        'الاسم: ' + data.get('name') + '\n' +
-        'الشركة: ' + data.get('company') + '\n' +
-        'رقم التواصل: ' + data.get('phone') + '\n' +
-        'القطاع: ' + data.get('sector') + '\n\n' +
-        'التحدي الحالي:\n' + data.get('message')
-      );
-      window.location.href = 'mailto:beesoo.laabsh@gmail.com?subject=' + subject + '&body=' + body;
+    // ========== DASHBOARD CHART ==========
+    const chartContainer = document.getElementById('dashboardChart');
+    if (chartContainer) {
+      const chartData = [
+        { day: 'السبت', wa: 60, ig: 30 },
+        { day: 'الأحد', wa: 75, ig: 40 },
+        { day: 'الإثنين', wa: 85, ig: 35 },
+        { day: 'الثلاثاء', wa: 70, ig: 50 },
+        { day: 'الأربعاء', wa: 90, ig: 45 },
+        { day: 'الخميس', wa: 95, ig: 55 },
+        { day: 'الجمعة', wa: 65, ig: 35 },
+      ];
+      chartData.forEach((d, i) => {
+        const col = document.createElement('div');
+        col.className = 'flex-1 flex flex-col items-center gap-1';
+        col.innerHTML = `
+          <div class="flex items-end gap-0.5 h-28 w-full justify-center">
+            <div class="w-2.5 md:w-3 rounded-t bg-gradient-to-t from-teal-600 to-teal-300 chart-bar" data-h="${d.wa}" style="height: 0%"></div>
+            <div class="w-2.5 md:w-3 rounded-t bg-gradient-to-t from-amber-500 to-gold chart-bar" data-h="${d.ig}" style="height: 0%"></div>
+          </div>
+        `;
+        chartContainer.appendChild(col);
+      });
+    }
+
+    const chartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          chartContainer.querySelectorAll('.chart-bar').forEach((bar, i) => {
+            setTimeout(() => {
+              bar.style.height = bar.dataset.h + '%';
+              bar.style.transition = 'height 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            }, i * 80);
+          });
+          chartObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    if (chartContainer) chartObserver.observe(chartContainer);
+
+    // ========== CHAT PREVIEW (TYPING ANIMATION) ==========
+    const chatMessages = document.getElementById('chatMessages');
+    const chatScript = [
+      { type: 'in', text: 'السلام عليكم، أحتاج عرض سعر لخدمة الاستقدام من إندونيسيا 👋', delay: 0 },
+      { type: 'out', text: 'وعليكم السلام، أهلاً بكِ نورة 🌟 ممكن أعرف نوع العمالة المطلوبة؟', delay: 1500 },
+      { type: 'in', text: 'محللة تمريضية بخبرة 3 سنوات', delay: 3000 },
+      { type: 'system', text: '⚡ تم توزيع المحادثة تلقائيًا لقسم الاستقدام', delay: 4200 },
+      { type: 'out', text: 'تمام، عندي 3 سير ذاتية متوفرة تناسب طلبك. سأرسل العرض خلال 5 دقائق ✅', delay: 5500 },
+    ];
+
+    function renderChat() {
+      chatMessages.innerHTML = '';
+      chatScript.forEach((msg, i) => {
+        setTimeout(() => {
+          const wrapper = document.createElement('div');
+          if (msg.type === 'system') {
+            wrapper.className = 'flex justify-center my-2';
+            wrapper.innerHTML = `
+              <div class="px-3 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-[10px] font-bold flex items-center gap-1.5 chat-bubble-in">
+                <span class="w-1.5 h-1.5 bg-teal-500 rounded-full pulse-dot"></span>
+                ${msg.text}
+              </div>
+            `;
+          } else if (msg.type === 'in') {
+            wrapper.className = 'flex justify-start chat-bubble-in';
+            wrapper.innerHTML = `
+              <div class="max-w-[80%] bg-white rounded-2xl rounded-tr-sm px-4 py-2.5 shadow-sm border border-ink/5">
+                <p class="text-sm text-ink leading-relaxed">${msg.text}</p>
+                <span class="text-[10px] text-ink/40 block mt-1">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2,'0')}</span>
+              </div>
+            `;
+          } else {
+            wrapper.className = 'flex justify-end chat-bubble-out';
+            wrapper.innerHTML = `
+              <div class="max-w-[80%] bg-gradient-to-l from-teal-500 to-teal-400 text-white rounded-2xl rounded-tl-sm px-4 py-2.5 shadow-md">
+                <p class="text-sm leading-relaxed">${msg.text}</p>
+                <span class="text-[10px] text-white/70 block mt-1">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2,'0')} ✓✓</span>
+              </div>
+            `;
+          }
+          chatMessages.appendChild(wrapper);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, msg.delay);
+      });
+
+      // Loop after all messages
+      setTimeout(() => {
+        renderChat();
+      }, 9000);
+    }
+
+    // Start chat animation when hero is visible
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          renderChat();
+          heroObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const heroEl = document.getElementById('hero');
+    if (heroEl) heroObserver.observe(heroEl);
+
+    // ========== FAQ ACCORDION ==========
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Open this if it was closed
+        if (!isOpen) item.classList.add('open');
+      });
     });
+
+    // ========== DEMO FORM SUBMIT ==========
+    const demoForm = document.getElementById('demoForm');
+    if (demoForm) {
+      demoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = demoForm.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span>جاري الإرسال...</span>';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = '<span>تم استلام طلبك بنجاح ✓</span>';
+          btn.classList.add('bg-green-500');
+          btn.classList.remove('from-teal-400', 'to-teal-300');
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove('bg-green-500');
+            btn.classList.add('from-teal-400', 'to-teal-300');
+            btn.disabled = false;
+            demoForm.reset();
+          }, 2500);
+        }, 1200);
+      });
+    }
+
+    // ========== SMOOTH SCROLL OFFSET ==========
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+     // ========== VIDEO PLAY BUTTON ==========
+    const platformVideo = document.getElementById('platformVideo');
+    const videoPlayBtn = document.getElementById('videoPlayBtn');
+    if (platformVideo && videoPlayBtn) {
+      videoPlayBtn.addEventListener('click', () => {
+        platformVideo.play();
+        videoPlayBtn.style.opacity = '0';
+        videoPlayBtn.style.pointerEvents = 'none';
+      });
+      platformVideo.addEventListener('play', () => {
+        videoPlayBtn.style.opacity = '0';
+        videoPlayBtn.style.pointerEvents = 'none';
+      });
+      platformVideo.addEventListener('pause', () => {
+        videoPlayBtn.style.opacity = '1';
+        videoPlayBtn.style.pointerEvents = 'auto';
+      });
+      platformVideo.addEventListener('ended', () => {
+        videoPlayBtn.style.opacity = '1';
+        videoPlayBtn.style.pointerEvents = 'auto';
+      });
+    }
   </script>
+
 </body>
 </html>
