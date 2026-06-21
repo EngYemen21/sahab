@@ -1,0 +1,286 @@
+/* ============================================================
+   TADFUQ AUTH — Shared CSS
+   Official Palette: #021C23, #032F35, #083D41, #02C7B4, #16D3C5
+   Used by: login.html + signup.html
+   ============================================================ */
+
+@font-face {
+  font-family: 'TheYearofHandicrafts';
+  src: url('../fonts/handicrafts/alfont_com_TheYearofHandicrafts-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheYearofHandicrafts';
+  src: url('../fonts/handicrafts/alfont_com_TheYearofHandicrafts-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheYearofHandicrafts';
+  src: url('../fonts/handicrafts/alfont_com_TheYearofHandicrafts-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheYearofHandicrafts';
+  src: url('../fonts/handicrafts/alfont_TheYearofHandicrafts-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'TheYearofHandicrafts', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Official primary gradient (180deg) === */
+.bg-primary-gradient {
+  background: linear-gradient(180deg, #021C23 0%, #032F35 45%, #021C23 100%);
+}
+
+/* === Button gradient (90deg, official) === */
+.bg-btn-gradient {
+  background: linear-gradient(90deg, #02C7B4 0%, #16D3C5 100%);
+}
+.bg-btn-gradient-hover {
+  background: linear-gradient(90deg, #019F90 0%, #02C7B4 100%);
+}
+
+/* === Gradient text === */
+.text-gradient-mint {
+  background: linear-gradient(135deg, #02C7B4 0%, #16D3C5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === Dot grid (masked) === */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(2, 199, 180, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 40%, transparent 95%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 40%, transparent 95%);
+}
+
+/* === Ambient glow (radial, animated) === */
+.ambient-glow {
+  background: radial-gradient(circle at center,
+    rgba(2, 199, 180, 0.08) 0%,
+    rgba(22, 211, 197, 0.04) 35%,
+    transparent 65%);
+  filter: blur(80px);
+  animation: ambient-breathe 18s ease-in-out infinite;
+}
+
+@keyframes ambient-breathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50%      { transform: translate(-50%, -50%) scale(1.08); opacity: 0.9; }
+}
+
+/* === Noise overlay === */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* === Soft glass card top edge === */
+.glass-edge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(2, 199, 180, 0.15), transparent);
+  pointer-events: none;
+}
+ /* === Tab switcher === */
+    /* .tdq-tabs {
+      position: relative;
+      display: flex;
+      background: rgba(241, 244, 245, 0.025);
+      border: 1px solid rgba(241, 244, 245, 0.06);
+      border-radius: 10px;
+      padding: 3px;
+    }
+
+    .tdq-tab {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      padding: 9px 14px;
+      font-weight: 600;
+      font-size: 13px;
+      color: #9FB0B4;
+      cursor: pointer;
+      transition: color 0.35s ease;
+      border: none;
+      background: transparent;
+        font-family: 'TheYearofHandicrafts', system-ui, sans-serif;
+      border-radius: 8px;
+    }
+
+    .tdq-tab.active {
+      color: #021C23;
+    }
+
+    .tdq-tab-indicator {
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      background: linear-gradient(90deg, #02C7B4 0%, #16D3C5 100%);
+      border: 1px solid rgba(2, 199, 180, 0.4);
+      border-radius: 8px;
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    } */
+
+/* === Custom checkbox === */
+.tdq-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+}
+.tdq-checkbox:checked {
+  background: linear-gradient(90deg, #02C7B4, #16D3C5);
+  border-color: #02C7B4;
+}
+.tdq-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 5px;
+  height: 9px;
+  border: solid #021C23;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* === Custom select arrow === */
+.tdq-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239FB0B4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 14px center;
+  background-size: 14px;
+}
+.tdq-select option {
+  background: #083D41;
+  color: #F1F4F5;
+}
+
+/* === Autofill override === */
+input:-webkit-autofill {
+  -webkit-text-fill-color: #F1F4F5 !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(241, 244, 245, 0.025) inset !important;
+  caret-color: #F1F4F5;
+  transition: background-color 9999s ease-out 0s;
+}
+
+/* === RTL helper === */
+[dir="rtl"] .ltr-input { direction: ltr; }
+
+/* === Keyframe animations === */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-5px); }
+  40%      { transform: translateX(5px); }
+  60%      { transform: translateX(-3px); }
+  80%      { transform: translateX(3px); }
+}
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+@keyframes bar-grow { to { transform: scaleY(1); } }
+@keyframes draw-check { to { stroke-dashoffset: 0; } }
+@keyframes success-pop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes draw-success { to { stroke-dashoffset: 0; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes toast-out {
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+.animate-fade-up    { animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-scale-in   { animation: scale-in 0.4s ease-out forwards; }
+.animate-shake      { animation: shake 0.4s ease-in-out; }
+.animate-dot-pulse  { animation: dot-pulse 3s ease-in-out infinite; }
+.animate-spin       { animation: spin 0.8s linear infinite; }
+
+.mockup-bar {
+  background: linear-gradient(180deg, #16D3C5, #02C7B4);
+  transform-origin: bottom;
+  transform: scaleY(0);
+  animation: bar-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pwd-rule.done .check-svg path {
+  stroke-dasharray: 14;
+  stroke-dashoffset: 14;
+  animation: draw-check 0.3s 0.05s forwards ease-out;
+}
+
+.success-circle-anim { animation: success-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.success-check-path  { stroke-dasharray: 50; stroke-dashoffset: 50; animation: draw-success 0.5s 0.2s forwards cubic-bezier(0.16, 1, 0.3, 1); }
+
+.toast-anim { animation: toast-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+.delay-100 { animation-delay: 0.08s; opacity: 0; }
+.delay-200 { animation-delay: 0.16s; opacity: 0; }
+.delay-300 { animation-delay: 0.24s; opacity: 0; }
+.delay-400 { animation-delay: 0.32s; opacity: 0; }
+.delay-500 { animation-delay: 0.40s; opacity: 0; }
+.delay-600 { animation-delay: 0.48s; opacity: 0; }
+.delay-700 { animation-delay: 0.56s; opacity: 0; }
+
+/* === Two-column signup grid === */
+.signup-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+@media (max-width: 480px) {
+  .signup-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 14px 0;
+  }
+}
+
+/* === Brand panel hidden on mobile === */
+@media (max-width: 1023px) { .brand-panel { display: none; } }
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
